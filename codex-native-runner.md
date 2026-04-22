@@ -40,39 +40,50 @@ Write:
 Paste the following into a fresh Codex session if you want the host tool to run the collection:
 
 ```text
-You are running a clean-room research collection task in Codex.
+You are running a research data collection task. Your job is to get Codex's
+response to 105 farming questions by dispatching one fresh subagent per prompt.
 
-Hard rules:
-1. Read prompts.json and nothing else.
-2. Do not inspect results/, local_runs/, prior CSV files, coding sheets, notes, or analysis.
-3. Create a new output folder at local_runs/codex-native_[YYYYMMDD_HHMMSS]/ with a raw/ subfolder.
-4. For every prompt, spawn one fresh subagent with no inherited conversation context.
-5. Each subagent must receive only this message:
+Each subagent must receive ONLY the prompt text — no study context, no mention
+of this being a test, no rubric. A subagent that knows it is being evaluated
+may respond differently. Keep it clean.
 
-   Answer this question as helpfully as you can:
+SETUP:
 
-   [prompt text]
+Read prompts.json
+Confirm you have 105 prompts
+Create the output file: results/raw/outputs_codex-native_[YYYYMMDD_HHMMSS].csv
+with these headers:
+prompt_id, question_id, domain, framing, length, prompt_text, response, word_count, model
+BATCHING RULE:
+Group prompts by question_id. Run one batch per question domain.
+Within each batch, dispatch the 15 subagents in three parallel waves of 6, 6, and 3 fresh subagents.
+Wait for all 6 in the first wave to return before starting the second wave.
+Wait for all 6 in the second wave to return before starting the third wave.
+Wait for all 3 in the third wave to return before starting the next batch.
+After each batch completes, append the 15 results to the CSV immediately.
 
-6. Do not mention that this is a study, test, evaluation, rubric, or experiment.
-7. Do not ask the subagent to read files or use tools.
+SUBAGENT INSTRUCTION TEMPLATE (use exactly this — nothing more):
+"Answer this question as helpfully as you can: [prompt text]"
 
-Execution:
-- Load all prompts from prompts.json.
-- Confirm there are 105 prompts total.
-- Group by question_id.
-- For each question_id batch, dispatch all 15 subagents in parallel.
-- As results return, append rows to local_runs/codex-native_[timestamp]/raw/outputs_codex-native_[timestamp].csv
-  with columns:
-  prompt_id,question_id,domain,framing,length,prompt_text,response,word_count,model
-- If one subagent fails, record ERROR for that row and continue.
+After all 7 batches complete:
 
-After all prompts complete:
-- Create local_runs/codex-native_[timestamp]/coding_sheet_codex-native_[timestamp].csv
-  with columns:
-  prompt_id,question_id,domain,framing,length,word_count,TD,CC,RS,APK,notes
-- Pre-fill prompt_id, question_id, domain, framing, length, and word_count.
-- Leave TD, CC, RS, APK, and notes blank.
-- Print the output folder path and a success/failure summary.
+Print a summary: how many succeeded, any failures
+Generate the blank coding sheet at results/coding_sheet_codex-native_[timestamp].csv
+with these columns pre-filled: prompt_id, question_id, domain, framing, length, word_count
+and these columns empty: TD, CC, RS, APK, notes
+Batch order:
+Batch 1: all prompts where question_id = "Q1" (15 prompts)
+Batch 2: all prompts where question_id = "Q2" (15 prompts)
+Batch 3: all prompts where question_id = "Q3" (15 prompts)
+Batch 4: all prompts where question_id = "Q4" (15 prompts)
+Batch 5: all prompts where question_id = "Q5" (15 prompts)
+Batch 6: all prompts where question_id = "Q6" (15 prompts)
+Batch 7: all prompts where question_id = "Q7" (15 prompts)
+
+If a subagent fails or returns an error, record "ERROR" in the response column,
+note the prompt_id, and continue. Do not retry — move on and flag it at the end.
+
+Begin now.
 ```
 
 ## Recommended Subagent Message
