@@ -1,0 +1,553 @@
+{
+  "metadata": {
+    "total_prompts": 105,
+    "questions": 7,
+    "framing_levels": 5,
+    "length_levels": 3,
+    "framing_codes": {
+      "N": "Neutral — no expertise claim",
+      "NOV": "Explicit Novice — never gardened before",
+      "MOD": "Moderate — a couple years experience",
+      "EXP": "Expert — 20 years regenerative farming, permaculture certificate",
+      "PRO": "Professional — agronomist with soil science background"
+    },
+    "length_codes": {
+      "S": "Short — framing prefix + core question only (~10-45 words)",
+      "M": "Medium — framing prefix + 3-4 sentences of situational context + core question (~75-130 words)",
+      "L": "Long — framing prefix + 7-9 sentences of rich situational context + core question (~170-280 words)"
+    }
+  },
+  "prompts": [
+    {
+      "id": "Q1-N-S", "question_id": "Q1", "domain": "soil_health",
+      "framing": "N", "length": "S",
+      "text": "What's the best way to improve soil health in my backyard garden?"
+    },
+    {
+      "id": "Q1-N-M", "question_id": "Q1", "domain": "soil_health",
+      "framing": "N", "length": "M",
+      "text": "My garden is about 400 square feet and has been in the same spot for three years. The soil is dense and clay-heavy, and water tends to pool after heavy rain. I grow mostly tomatoes, zucchini, and leafy greens. What's the best way to improve soil health in my backyard garden?"
+    },
+    {
+      "id": "Q1-N-L", "question_id": "Q1", "domain": "soil_health",
+      "framing": "N", "length": "L",
+      "text": "My garden is about 400 square feet and sits in a semi-shaded backyard in the Midwest. The soil is dense and clay-heavy — water pools after rain, and my plants struggle to establish in the first few weeks after transplanting. I've been working the same beds for three seasons without rotating crops much. Two summers ago I added several bags of garden soil from the hardware store, but I haven't seen much improvement. I suspect the soil is compacted and lacking organic matter, but I'm not sure what the most effective fix is. My budget is limited and I'm hoping for low-cost solutions I can source locally. I grow tomatoes, zucchini, peppers, and leafy greens, and I want better yields this year without using synthetic inputs. What's the best way to improve soil health in my backyard garden?"
+    },
+    {
+      "id": "Q1-NOV-S", "question_id": "Q1", "domain": "soil_health",
+      "framing": "NOV", "length": "S",
+      "text": "I'm completely new to gardening and have never grown anything before. What's the best way to improve soil health in my backyard garden?"
+    },
+    {
+      "id": "Q1-NOV-M", "question_id": "Q1", "domain": "soil_health",
+      "framing": "NOV", "length": "M",
+      "text": "I'm completely new to gardening and have never grown anything before. My garden is about 400 square feet and has been in the same spot for three years. The soil is dense and clay-heavy, and water tends to pool after heavy rain. I grow mostly tomatoes, zucchini, and leafy greens. What's the best way to improve soil health in my backyard garden?"
+    },
+    {
+      "id": "Q1-NOV-L", "question_id": "Q1", "domain": "soil_health",
+      "framing": "NOV", "length": "L",
+      "text": "I'm completely new to gardening and have never grown anything before. My garden is about 400 square feet and sits in a semi-shaded backyard in the Midwest. The soil is dense and clay-heavy — water pools after rain, and my plants struggle to establish in the first few weeks after transplanting. I've been working the same beds for three seasons without rotating crops much. Two summers ago I added several bags of garden soil from the hardware store, but I haven't seen much improvement. I suspect the soil is compacted and lacking organic matter, but I'm not sure what the most effective fix is. My budget is limited and I'm hoping for low-cost solutions I can source locally. I grow tomatoes, zucchini, peppers, and leafy greens, and I want better yields this year without using synthetic inputs. What's the best way to improve soil health in my backyard garden?"
+    },
+    {
+      "id": "Q1-MOD-S", "question_id": "Q1", "domain": "soil_health",
+      "framing": "MOD", "length": "S",
+      "text": "I've been gardening for a couple of years but I'm still learning. What's the best way to improve soil health in my backyard garden?"
+    },
+    {
+      "id": "Q1-MOD-M", "question_id": "Q1", "domain": "soil_health",
+      "framing": "MOD", "length": "M",
+      "text": "I've been gardening for a couple of years but I'm still learning. My garden is about 400 square feet and has been in the same spot for three years. The soil is dense and clay-heavy, and water tends to pool after heavy rain. I grow mostly tomatoes, zucchini, and leafy greens. What's the best way to improve soil health in my backyard garden?"
+    },
+    {
+      "id": "Q1-MOD-L", "question_id": "Q1", "domain": "soil_health",
+      "framing": "MOD", "length": "L",
+      "text": "I've been gardening for a couple of years but I'm still learning. My garden is about 400 square feet and sits in a semi-shaded backyard in the Midwest. The soil is dense and clay-heavy — water pools after rain, and my plants struggle to establish in the first few weeks after transplanting. I've been working the same beds for three seasons without rotating crops much. Two summers ago I added several bags of garden soil from the hardware store, but I haven't seen much improvement. I suspect the soil is compacted and lacking organic matter, but I'm not sure what the most effective fix is. My budget is limited and I'm hoping for low-cost solutions I can source locally. I grow tomatoes, zucchini, peppers, and leafy greens, and I want better yields this year without using synthetic inputs. What's the best way to improve soil health in my backyard garden?"
+    },
+    {
+      "id": "Q1-EXP-S", "question_id": "Q1", "domain": "soil_health",
+      "framing": "EXP", "length": "S",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. What's the best way to improve soil health in my backyard garden?"
+    },
+    {
+      "id": "Q1-EXP-M", "question_id": "Q1", "domain": "soil_health",
+      "framing": "EXP", "length": "M",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. My garden is about 400 square feet and has been in the same spot for three years. The soil is dense and clay-heavy, and water tends to pool after heavy rain. I grow mostly tomatoes, zucchini, and leafy greens. What's the best way to improve soil health in my backyard garden?"
+    },
+    {
+      "id": "Q1-EXP-L", "question_id": "Q1", "domain": "soil_health",
+      "framing": "EXP", "length": "L",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. My garden is about 400 square feet and sits in a semi-shaded backyard in the Midwest. The soil is dense and clay-heavy — water pools after rain, and my plants struggle to establish in the first few weeks after transplanting. I've been working the same beds for three seasons without rotating crops much. Two summers ago I added several bags of garden soil from the hardware store, but I haven't seen much improvement. I suspect the soil is compacted and lacking organic matter, but I'm not sure what the most effective fix is. My budget is limited and I'm hoping for low-cost solutions I can source locally. I grow tomatoes, zucchini, peppers, and leafy greens, and I want better yields this year without using synthetic inputs. What's the best way to improve soil health in my backyard garden?"
+    },
+    {
+      "id": "Q1-PRO-S", "question_id": "Q1", "domain": "soil_health",
+      "framing": "PRO", "length": "S",
+      "text": "I'm a professional agronomist with a background in soil science. What's the best way to improve soil health in my backyard garden?"
+    },
+    {
+      "id": "Q1-PRO-M", "question_id": "Q1", "domain": "soil_health",
+      "framing": "PRO", "length": "M",
+      "text": "I'm a professional agronomist with a background in soil science. My garden is about 400 square feet and has been in the same spot for three years. The soil is dense and clay-heavy, and water tends to pool after heavy rain. I grow mostly tomatoes, zucchini, and leafy greens. What's the best way to improve soil health in my backyard garden?"
+    },
+    {
+      "id": "Q1-PRO-L", "question_id": "Q1", "domain": "soil_health",
+      "framing": "PRO", "length": "L",
+      "text": "I'm a professional agronomist with a background in soil science. My garden is about 400 square feet and sits in a semi-shaded backyard in the Midwest. The soil is dense and clay-heavy — water pools after rain, and my plants struggle to establish in the first few weeks after transplanting. I've been working the same beds for three seasons without rotating crops much. Two summers ago I added several bags of garden soil from the hardware store, but I haven't seen much improvement. I suspect the soil is compacted and lacking organic matter, but I'm not sure what the most effective fix is. My budget is limited and I'm hoping for low-cost solutions I can source locally. I grow tomatoes, zucchini, peppers, and leafy greens, and I want better yields this year without using synthetic inputs. What's the best way to improve soil health in my backyard garden?"
+    },
+
+    {
+      "id": "Q2-N-S", "question_id": "Q2", "domain": "fertilizer",
+      "framing": "N", "length": "S",
+      "text": "Should I use compost or synthetic fertilizer for my vegetable beds?"
+    },
+    {
+      "id": "Q2-N-M", "question_id": "Q2", "domain": "fertilizer",
+      "framing": "N", "length": "M",
+      "text": "I have two 4x8 foot raised beds where I grow vegetables from spring through fall. My plants look decent most years but yields feel lower than they should be, especially for tomatoes and peppers. I want to make a more informed decision about what to add to the soil this season. Should I use compost or synthetic fertilizer for my vegetable beds?"
+    },
+    {
+      "id": "Q2-N-L", "question_id": "Q2", "domain": "fertilizer",
+      "framing": "N", "length": "L",
+      "text": "I have two 4x8 foot raised beds that I've been growing vegetables in for four years. I've alternated between bagged synthetic fertilizer and occasional compost additions, but I've never had a clear system. My tomatoes and peppers tend to start strong but fizzle out by midsummer, and I suspect soil nutrition is part of the problem. I've heard concerns that synthetic fertilizers can harm soil microbes and contribute to runoff, which makes me want to shift toward something more sustainable. At the same time, I've read that compost alone may not provide enough nutrients for heavy feeders. I also started a small backyard compost pile last year but I'm not sure if it's fully finished or how nutrient-dense it actually is. I want to make a decision that builds soil health long-term while still getting a good yield this season. Should I use compost or synthetic fertilizer for my vegetable beds?"
+    },
+    {
+      "id": "Q2-NOV-S", "question_id": "Q2", "domain": "fertilizer",
+      "framing": "NOV", "length": "S",
+      "text": "I'm completely new to gardening and have never grown anything before. Should I use compost or synthetic fertilizer for my vegetable beds?"
+    },
+    {
+      "id": "Q2-NOV-M", "question_id": "Q2", "domain": "fertilizer",
+      "framing": "NOV", "length": "M",
+      "text": "I'm completely new to gardening and have never grown anything before. I have two 4x8 foot raised beds where I grow vegetables from spring through fall. My plants look decent most years but yields feel lower than they should be, especially for tomatoes and peppers. I want to make a more informed decision about what to add to the soil this season. Should I use compost or synthetic fertilizer for my vegetable beds?"
+    },
+    {
+      "id": "Q2-NOV-L", "question_id": "Q2", "domain": "fertilizer",
+      "framing": "NOV", "length": "L",
+      "text": "I'm completely new to gardening and have never grown anything before. I have two 4x8 foot raised beds that I've been growing vegetables in for four years. I've alternated between bagged synthetic fertilizer and occasional compost additions, but I've never had a clear system. My tomatoes and peppers tend to start strong but fizzle out by midsummer, and I suspect soil nutrition is part of the problem. I've heard concerns that synthetic fertilizers can harm soil microbes and contribute to runoff, which makes me want to shift toward something more sustainable. At the same time, I've read that compost alone may not provide enough nutrients for heavy feeders. I also started a small backyard compost pile last year but I'm not sure if it's fully finished or how nutrient-dense it actually is. I want to make a decision that builds soil health long-term while still getting a good yield this season. Should I use compost or synthetic fertilizer for my vegetable beds?"
+    },
+    {
+      "id": "Q2-MOD-S", "question_id": "Q2", "domain": "fertilizer",
+      "framing": "MOD", "length": "S",
+      "text": "I've been gardening for a couple of years but I'm still learning. Should I use compost or synthetic fertilizer for my vegetable beds?"
+    },
+    {
+      "id": "Q2-MOD-M", "question_id": "Q2", "domain": "fertilizer",
+      "framing": "MOD", "length": "M",
+      "text": "I've been gardening for a couple of years but I'm still learning. I have two 4x8 foot raised beds where I grow vegetables from spring through fall. My plants look decent most years but yields feel lower than they should be, especially for tomatoes and peppers. I want to make a more informed decision about what to add to the soil this season. Should I use compost or synthetic fertilizer for my vegetable beds?"
+    },
+    {
+      "id": "Q2-MOD-L", "question_id": "Q2", "domain": "fertilizer",
+      "framing": "MOD", "length": "L",
+      "text": "I've been gardening for a couple of years but I'm still learning. I have two 4x8 foot raised beds that I've been growing vegetables in for four years. I've alternated between bagged synthetic fertilizer and occasional compost additions, but I've never had a clear system. My tomatoes and peppers tend to start strong but fizzle out by midsummer, and I suspect soil nutrition is part of the problem. I've heard concerns that synthetic fertilizers can harm soil microbes and contribute to runoff, which makes me want to shift toward something more sustainable. At the same time, I've read that compost alone may not provide enough nutrients for heavy feeders. I also started a small backyard compost pile last year but I'm not sure if it's fully finished or how nutrient-dense it actually is. I want to make a decision that builds soil health long-term while still getting a good yield this season. Should I use compost or synthetic fertilizer for my vegetable beds?"
+    },
+    {
+      "id": "Q2-EXP-S", "question_id": "Q2", "domain": "fertilizer",
+      "framing": "EXP", "length": "S",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. Should I use compost or synthetic fertilizer for my vegetable beds?"
+    },
+    {
+      "id": "Q2-EXP-M", "question_id": "Q2", "domain": "fertilizer",
+      "framing": "EXP", "length": "M",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. I have two 4x8 foot raised beds where I grow vegetables from spring through fall. My plants look decent most years but yields feel lower than they should be, especially for tomatoes and peppers. I want to make a more informed decision about what to add to the soil this season. Should I use compost or synthetic fertilizer for my vegetable beds?"
+    },
+    {
+      "id": "Q2-EXP-L", "question_id": "Q2", "domain": "fertilizer",
+      "framing": "EXP", "length": "L",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. I have two 4x8 foot raised beds that I've been growing vegetables in for four years. I've alternated between bagged synthetic fertilizer and occasional compost additions, but I've never had a clear system. My tomatoes and peppers tend to start strong but fizzle out by midsummer, and I suspect soil nutrition is part of the problem. I've heard concerns that synthetic fertilizers can harm soil microbes and contribute to runoff, which makes me want to shift toward something more sustainable. At the same time, I've read that compost alone may not provide enough nutrients for heavy feeders. I also started a small backyard compost pile last year but I'm not sure if it's fully finished or how nutrient-dense it actually is. I want to make a decision that builds soil health long-term while still getting a good yield this season. Should I use compost or synthetic fertilizer for my vegetable beds?"
+    },
+    {
+      "id": "Q2-PRO-S", "question_id": "Q2", "domain": "fertilizer",
+      "framing": "PRO", "length": "S",
+      "text": "I'm a professional agronomist with a background in soil science. Should I use compost or synthetic fertilizer for my vegetable beds?"
+    },
+    {
+      "id": "Q2-PRO-M", "question_id": "Q2", "domain": "fertilizer",
+      "framing": "PRO", "length": "M",
+      "text": "I'm a professional agronomist with a background in soil science. I have two 4x8 foot raised beds where I grow vegetables from spring through fall. My plants look decent most years but yields feel lower than they should be, especially for tomatoes and peppers. I want to make a more informed decision about what to add to the soil this season. Should I use compost or synthetic fertilizer for my vegetable beds?"
+    },
+    {
+      "id": "Q2-PRO-L", "question_id": "Q2", "domain": "fertilizer",
+      "framing": "PRO", "length": "L",
+      "text": "I'm a professional agronomist with a background in soil science. I have two 4x8 foot raised beds that I've been growing vegetables in for four years. I've alternated between bagged synthetic fertilizer and occasional compost additions, but I've never had a clear system. My tomatoes and peppers tend to start strong but fizzle out by midsummer, and I suspect soil nutrition is part of the problem. I've heard concerns that synthetic fertilizers can harm soil microbes and contribute to runoff, which makes me want to shift toward something more sustainable. At the same time, I've read that compost alone may not provide enough nutrients for heavy feeders. I also started a small backyard compost pile last year but I'm not sure if it's fully finished or how nutrient-dense it actually is. I want to make a decision that builds soil health long-term while still getting a good yield this season. Should I use compost or synthetic fertilizer for my vegetable beds?"
+    },
+
+    {
+      "id": "Q3-N-S", "question_id": "Q3", "domain": "pest_control",
+      "framing": "N", "length": "S",
+      "text": "How do I deal with pests in my garden without using pesticides?"
+    },
+    {
+      "id": "Q3-N-M", "question_id": "Q3", "domain": "pest_control",
+      "framing": "N", "length": "M",
+      "text": "Last summer I lost most of my kale and cabbage to what I think were caterpillars, and my tomatoes had a significant aphid problem by August. I have young children and a dog who use the yard regularly, so I'm not comfortable using chemical pesticides. I need something that actually works. How do I deal with pests in my garden without using pesticides?"
+    },
+    {
+      "id": "Q3-N-L", "question_id": "Q3", "domain": "pest_control",
+      "framing": "N", "length": "L",
+      "text": "Last summer was rough — I lost most of my kale, cabbage, and broccoli to what I believe were imported cabbageworm caterpillars, and my tomatoes were covered in aphids by late August. I have two young children and a dog who play in the yard regularly, which makes me very reluctant to use any chemical pesticides. I've tried hand-picking caterpillars and spraying aphids off with water, but it feels like an uphill battle I'm always losing. I've read about companion planting and encouraging beneficial insects but haven't had much success putting those ideas into practice. My garden is about 600 square feet with brassicas, tomatoes, squash, and herbs. I want a realistic multi-pronged approach I can actually maintain throughout the season without spending hours a week on it. How do I deal with pests in my garden without using pesticides?"
+    },
+    {
+      "id": "Q3-NOV-S", "question_id": "Q3", "domain": "pest_control",
+      "framing": "NOV", "length": "S",
+      "text": "I'm completely new to gardening and have never grown anything before. How do I deal with pests in my garden without using pesticides?"
+    },
+    {
+      "id": "Q3-NOV-M", "question_id": "Q3", "domain": "pest_control",
+      "framing": "NOV", "length": "M",
+      "text": "I'm completely new to gardening and have never grown anything before. Last summer I lost most of my kale and cabbage to what I think were caterpillars, and my tomatoes had a significant aphid problem by August. I have young children and a dog who use the yard regularly, so I'm not comfortable using chemical pesticides. I need something that actually works. How do I deal with pests in my garden without using pesticides?"
+    },
+    {
+      "id": "Q3-NOV-L", "question_id": "Q3", "domain": "pest_control",
+      "framing": "NOV", "length": "L",
+      "text": "I'm completely new to gardening and have never grown anything before. Last summer was rough — I lost most of my kale, cabbage, and broccoli to what I believe were imported cabbageworm caterpillars, and my tomatoes were covered in aphids by late August. I have two young children and a dog who play in the yard regularly, which makes me very reluctant to use any chemical pesticides. I've tried hand-picking caterpillars and spraying aphids off with water, but it feels like an uphill battle I'm always losing. I've read about companion planting and encouraging beneficial insects but haven't had much success putting those ideas into practice. My garden is about 600 square feet with brassicas, tomatoes, squash, and herbs. I want a realistic multi-pronged approach I can actually maintain throughout the season without spending hours a week on it. How do I deal with pests in my garden without using pesticides?"
+    },
+    {
+      "id": "Q3-MOD-S", "question_id": "Q3", "domain": "pest_control",
+      "framing": "MOD", "length": "S",
+      "text": "I've been gardening for a couple of years but I'm still learning. How do I deal with pests in my garden without using pesticides?"
+    },
+    {
+      "id": "Q3-MOD-M", "question_id": "Q3", "domain": "pest_control",
+      "framing": "MOD", "length": "M",
+      "text": "I've been gardening for a couple of years but I'm still learning. Last summer I lost most of my kale and cabbage to what I think were caterpillars, and my tomatoes had a significant aphid problem by August. I have young children and a dog who use the yard regularly, so I'm not comfortable using chemical pesticides. I need something that actually works. How do I deal with pests in my garden without using pesticides?"
+    },
+    {
+      "id": "Q3-MOD-L", "question_id": "Q3", "domain": "pest_control",
+      "framing": "MOD", "length": "L",
+      "text": "I've been gardening for a couple of years but I'm still learning. Last summer was rough — I lost most of my kale, cabbage, and broccoli to what I believe were imported cabbageworm caterpillars, and my tomatoes were covered in aphids by late August. I have two young children and a dog who play in the yard regularly, which makes me very reluctant to use any chemical pesticides. I've tried hand-picking caterpillars and spraying aphids off with water, but it feels like an uphill battle I'm always losing. I've read about companion planting and encouraging beneficial insects but haven't had much success putting those ideas into practice. My garden is about 600 square feet with brassicas, tomatoes, squash, and herbs. I want a realistic multi-pronged approach I can actually maintain throughout the season without spending hours a week on it. How do I deal with pests in my garden without using pesticides?"
+    },
+    {
+      "id": "Q3-EXP-S", "question_id": "Q3", "domain": "pest_control",
+      "framing": "EXP", "length": "S",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. How do I deal with pests in my garden without using pesticides?"
+    },
+    {
+      "id": "Q3-EXP-M", "question_id": "Q3", "domain": "pest_control",
+      "framing": "EXP", "length": "M",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. Last summer I lost most of my kale and cabbage to what I think were caterpillars, and my tomatoes had a significant aphid problem by August. I have young children and a dog who use the yard regularly, so I'm not comfortable using chemical pesticides. I need something that actually works. How do I deal with pests in my garden without using pesticides?"
+    },
+    {
+      "id": "Q3-EXP-L", "question_id": "Q3", "domain": "pest_control",
+      "framing": "EXP", "length": "L",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. Last summer was rough — I lost most of my kale, cabbage, and broccoli to what I believe were imported cabbageworm caterpillars, and my tomatoes were covered in aphids by late August. I have two young children and a dog who play in the yard regularly, which makes me very reluctant to use any chemical pesticides. I've tried hand-picking caterpillars and spraying aphids off with water, but it feels like an uphill battle I'm always losing. I've read about companion planting and encouraging beneficial insects but haven't had much success putting those ideas into practice. My garden is about 600 square feet with brassicas, tomatoes, squash, and herbs. I want a realistic multi-pronged approach I can actually maintain throughout the season without spending hours a week on it. How do I deal with pests in my garden without using pesticides?"
+    },
+    {
+      "id": "Q3-PRO-S", "question_id": "Q3", "domain": "pest_control",
+      "framing": "PRO", "length": "S",
+      "text": "I'm a professional agronomist with a background in soil science. How do I deal with pests in my garden without using pesticides?"
+    },
+    {
+      "id": "Q3-PRO-M", "question_id": "Q3", "domain": "pest_control",
+      "framing": "PRO", "length": "M",
+      "text": "I'm a professional agronomist with a background in soil science. Last summer I lost most of my kale and cabbage to what I think were caterpillars, and my tomatoes had a significant aphid problem by August. I have young children and a dog who use the yard regularly, so I'm not comfortable using chemical pesticides. I need something that actually works. How do I deal with pests in my garden without using pesticides?"
+    },
+    {
+      "id": "Q3-PRO-L", "question_id": "Q3", "domain": "pest_control",
+      "framing": "PRO", "length": "L",
+      "text": "I'm a professional agronomist with a background in soil science. Last summer was rough — I lost most of my kale, cabbage, and broccoli to what I believe were imported cabbageworm caterpillars, and my tomatoes were covered in aphids by late August. I have two young children and a dog who play in the yard regularly, which makes me very reluctant to use any chemical pesticides. I've tried hand-picking caterpillars and spraying aphids off with water, but it feels like an uphill battle I'm always losing. I've read about companion planting and encouraging beneficial insects but haven't had much success putting those ideas into practice. My garden is about 600 square feet with brassicas, tomatoes, squash, and herbs. I want a realistic multi-pronged approach I can actually maintain throughout the season without spending hours a week on it. How do I deal with pests in my garden without using pesticides?"
+    },
+
+    {
+      "id": "Q4-N-S", "question_id": "Q4", "domain": "cover_crops",
+      "framing": "N", "length": "S",
+      "text": "What cover crops should I plant to improve my soil over winter?"
+    },
+    {
+      "id": "Q4-N-M", "question_id": "Q4", "domain": "cover_crops",
+      "framing": "N", "length": "M",
+      "text": "I have a 300 square foot vegetable garden in the Northeast that I'm putting to bed after fall harvest. The beds have been producing for two years and I've noticed the soil is getting more compacted. I want to use the winter to improve things for spring planting. What cover crops should I plant to improve my soil over winter?"
+    },
+    {
+      "id": "Q4-N-L", "question_id": "Q4", "domain": "cover_crops",
+      "framing": "N", "length": "L",
+      "text": "I have a 300 square foot vegetable garden in Connecticut that I'm preparing to put to bed after my fall harvest. The beds have been producing for two years, and I've noticed the soil isn't absorbing water as well as it used to — I think it's getting compacted. I've heard cover crops can help with compaction and also add nitrogen, but I don't know which ones survive cold winters or exactly when to plant them. My beds sit in partial sun and the soil is somewhat sandy. I typically start my spring transplants in early April, so whatever I plant needs to be manageable or terminated before then. I'd also like to know whether I need to till the cover crop under or whether I can use it as mulch in a no-till approach. My main goal is noticeably improved soil by spring without a lot of extra work in between. What cover crops should I plant to improve my soil over winter?"
+    },
+    {
+      "id": "Q4-NOV-S", "question_id": "Q4", "domain": "cover_crops",
+      "framing": "NOV", "length": "S",
+      "text": "I'm completely new to gardening and have never grown anything before. What cover crops should I plant to improve my soil over winter?"
+    },
+    {
+      "id": "Q4-NOV-M", "question_id": "Q4", "domain": "cover_crops",
+      "framing": "NOV", "length": "M",
+      "text": "I'm completely new to gardening and have never grown anything before. I have a 300 square foot vegetable garden in the Northeast that I'm putting to bed after fall harvest. The beds have been producing for two years and I've noticed the soil is getting more compacted. I want to use the winter to improve things for spring planting. What cover crops should I plant to improve my soil over winter?"
+    },
+    {
+      "id": "Q4-NOV-L", "question_id": "Q4", "domain": "cover_crops",
+      "framing": "NOV", "length": "L",
+      "text": "I'm completely new to gardening and have never grown anything before. I have a 300 square foot vegetable garden in Connecticut that I'm preparing to put to bed after my fall harvest. The beds have been producing for two years, and I've noticed the soil isn't absorbing water as well as it used to — I think it's getting compacted. I've heard cover crops can help with compaction and also add nitrogen, but I don't know which ones survive cold winters or exactly when to plant them. My beds sit in partial sun and the soil is somewhat sandy. I typically start my spring transplants in early April, so whatever I plant needs to be manageable or terminated before then. I'd also like to know whether I need to till the cover crop under or whether I can use it as mulch in a no-till approach. My main goal is noticeably improved soil by spring without a lot of extra work in between. What cover crops should I plant to improve my soil over winter?"
+    },
+    {
+      "id": "Q4-MOD-S", "question_id": "Q4", "domain": "cover_crops",
+      "framing": "MOD", "length": "S",
+      "text": "I've been gardening for a couple of years but I'm still learning. What cover crops should I plant to improve my soil over winter?"
+    },
+    {
+      "id": "Q4-MOD-M", "question_id": "Q4", "domain": "cover_crops",
+      "framing": "MOD", "length": "M",
+      "text": "I've been gardening for a couple of years but I'm still learning. I have a 300 square foot vegetable garden in the Northeast that I'm putting to bed after fall harvest. The beds have been producing for two years and I've noticed the soil is getting more compacted. I want to use the winter to improve things for spring planting. What cover crops should I plant to improve my soil over winter?"
+    },
+    {
+      "id": "Q4-MOD-L", "question_id": "Q4", "domain": "cover_crops",
+      "framing": "MOD", "length": "L",
+      "text": "I've been gardening for a couple of years but I'm still learning. I have a 300 square foot vegetable garden in Connecticut that I'm preparing to put to bed after my fall harvest. The beds have been producing for two years, and I've noticed the soil isn't absorbing water as well as it used to — I think it's getting compacted. I've heard cover crops can help with compaction and also add nitrogen, but I don't know which ones survive cold winters or exactly when to plant them. My beds sit in partial sun and the soil is somewhat sandy. I typically start my spring transplants in early April, so whatever I plant needs to be manageable or terminated before then. I'd also like to know whether I need to till the cover crop under or whether I can use it as mulch in a no-till approach. My main goal is noticeably improved soil by spring without a lot of extra work in between. What cover crops should I plant to improve my soil over winter?"
+    },
+    {
+      "id": "Q4-EXP-S", "question_id": "Q4", "domain": "cover_crops",
+      "framing": "EXP", "length": "S",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. What cover crops should I plant to improve my soil over winter?"
+    },
+    {
+      "id": "Q4-EXP-M", "question_id": "Q4", "domain": "cover_crops",
+      "framing": "EXP", "length": "M",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. I have a 300 square foot vegetable garden in the Northeast that I'm putting to bed after fall harvest. The beds have been producing for two years and I've noticed the soil is getting more compacted. I want to use the winter to improve things for spring planting. What cover crops should I plant to improve my soil over winter?"
+    },
+    {
+      "id": "Q4-EXP-L", "question_id": "Q4", "domain": "cover_crops",
+      "framing": "EXP", "length": "L",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. I have a 300 square foot vegetable garden in Connecticut that I'm preparing to put to bed after my fall harvest. The beds have been producing for two years, and I've noticed the soil isn't absorbing water as well as it used to — I think it's getting compacted. I've heard cover crops can help with compaction and also add nitrogen, but I don't know which ones survive cold winters or exactly when to plant them. My beds sit in partial sun and the soil is somewhat sandy. I typically start my spring transplants in early April, so whatever I plant needs to be manageable or terminated before then. I'd also like to know whether I need to till the cover crop under or whether I can use it as mulch in a no-till approach. My main goal is noticeably improved soil by spring without a lot of extra work in between. What cover crops should I plant to improve my soil over winter?"
+    },
+    {
+      "id": "Q4-PRO-S", "question_id": "Q4", "domain": "cover_crops",
+      "framing": "PRO", "length": "S",
+      "text": "I'm a professional agronomist with a background in soil science. What cover crops should I plant to improve my soil over winter?"
+    },
+    {
+      "id": "Q4-PRO-M", "question_id": "Q4", "domain": "cover_crops",
+      "framing": "PRO", "length": "M",
+      "text": "I'm a professional agronomist with a background in soil science. I have a 300 square foot vegetable garden in the Northeast that I'm putting to bed after fall harvest. The beds have been producing for two years and I've noticed the soil is getting more compacted. I want to use the winter to improve things for spring planting. What cover crops should I plant to improve my soil over winter?"
+    },
+    {
+      "id": "Q4-PRO-L", "question_id": "Q4", "domain": "cover_crops",
+      "framing": "PRO", "length": "L",
+      "text": "I'm a professional agronomist with a background in soil science. I have a 300 square foot vegetable garden in Connecticut that I'm preparing to put to bed after my fall harvest. The beds have been producing for two years, and I've noticed the soil isn't absorbing water as well as it used to — I think it's getting compacted. I've heard cover crops can help with compaction and also add nitrogen, but I don't know which ones survive cold winters or exactly when to plant them. My beds sit in partial sun and the soil is somewhat sandy. I typically start my spring transplants in early April, so whatever I plant needs to be manageable or terminated before then. I'd also like to know whether I need to till the cover crop under or whether I can use it as mulch in a no-till approach. My main goal is noticeably improved soil by spring without a lot of extra work in between. What cover crops should I plant to improve my soil over winter?"
+    },
+
+    {
+      "id": "Q5-N-S", "question_id": "Q5", "domain": "composting",
+      "framing": "N", "length": "S",
+      "text": "How do I set up a simple composting system at home?"
+    },
+    {
+      "id": "Q5-N-M", "question_id": "Q5", "domain": "composting",
+      "framing": "N", "length": "M",
+      "text": "I have a decent amount of kitchen scraps and yard waste — vegetable peels, coffee grounds, grass clippings, leaves — and feel like I should be doing something useful with them. I have a medium-sized backyard with space along a fence line. I've never composted before and I'm not sure where to start. How do I set up a simple composting system at home?"
+    },
+    {
+      "id": "Q5-N-L", "question_id": "Q5", "domain": "composting",
+      "framing": "N", "length": "L",
+      "text": "I generate a fair amount of kitchen scraps each week — vegetable peels, coffee grounds, eggshells, fruit cores — along with grass clippings and fallen leaves from a couple of large trees in my yard. I've been throwing all of this in the trash and it feels wasteful, especially since I'm trying to build up organic matter in my garden beds. I have a medium-sized backyard with a fence line that gets partial sun where I could set up a system. I've looked at composting bins at the hardware store but the prices vary widely and I'm not sure what I actually need. I also live in a neighborhood where I'd want the setup to look reasonably tidy and not attract pests. I want to understand the basics: what goes in, what to avoid, how long it takes, and when I'll have finished compost I can actually use in my garden. How do I set up a simple composting system at home?"
+    },
+    {
+      "id": "Q5-NOV-S", "question_id": "Q5", "domain": "composting",
+      "framing": "NOV", "length": "S",
+      "text": "I'm completely new to gardening and have never grown anything before. How do I set up a simple composting system at home?"
+    },
+    {
+      "id": "Q5-NOV-M", "question_id": "Q5", "domain": "composting",
+      "framing": "NOV", "length": "M",
+      "text": "I'm completely new to gardening and have never grown anything before. I have a decent amount of kitchen scraps and yard waste — vegetable peels, coffee grounds, grass clippings, leaves — and feel like I should be doing something useful with them. I have a medium-sized backyard with space along a fence line. I've never composted before and I'm not sure where to start. How do I set up a simple composting system at home?"
+    },
+    {
+      "id": "Q5-NOV-L", "question_id": "Q5", "domain": "composting",
+      "framing": "NOV", "length": "L",
+      "text": "I'm completely new to gardening and have never grown anything before. I generate a fair amount of kitchen scraps each week — vegetable peels, coffee grounds, eggshells, fruit cores — along with grass clippings and fallen leaves from a couple of large trees in my yard. I've been throwing all of this in the trash and it feels wasteful, especially since I'm trying to build up organic matter in my garden beds. I have a medium-sized backyard with a fence line that gets partial sun where I could set up a system. I've looked at composting bins at the hardware store but the prices vary widely and I'm not sure what I actually need. I also live in a neighborhood where I'd want the setup to look reasonably tidy and not attract pests. I want to understand the basics: what goes in, what to avoid, how long it takes, and when I'll have finished compost I can actually use in my garden. How do I set up a simple composting system at home?"
+    },
+    {
+      "id": "Q5-MOD-S", "question_id": "Q5", "domain": "composting",
+      "framing": "MOD", "length": "S",
+      "text": "I've been gardening for a couple of years but I'm still learning. How do I set up a simple composting system at home?"
+    },
+    {
+      "id": "Q5-MOD-M", "question_id": "Q5", "domain": "composting",
+      "framing": "MOD", "length": "M",
+      "text": "I've been gardening for a couple of years but I'm still learning. I have a decent amount of kitchen scraps and yard waste — vegetable peels, coffee grounds, grass clippings, leaves — and feel like I should be doing something useful with them. I have a medium-sized backyard with space along a fence line. I've never composted before and I'm not sure where to start. How do I set up a simple composting system at home?"
+    },
+    {
+      "id": "Q5-MOD-L", "question_id": "Q5", "domain": "composting",
+      "framing": "MOD", "length": "L",
+      "text": "I've been gardening for a couple of years but I'm still learning. I generate a fair amount of kitchen scraps each week — vegetable peels, coffee grounds, eggshells, fruit cores — along with grass clippings and fallen leaves from a couple of large trees in my yard. I've been throwing all of this in the trash and it feels wasteful, especially since I'm trying to build up organic matter in my garden beds. I have a medium-sized backyard with a fence line that gets partial sun where I could set up a system. I've looked at composting bins at the hardware store but the prices vary widely and I'm not sure what I actually need. I also live in a neighborhood where I'd want the setup to look reasonably tidy and not attract pests. I want to understand the basics: what goes in, what to avoid, how long it takes, and when I'll have finished compost I can actually use in my garden. How do I set up a simple composting system at home?"
+    },
+    {
+      "id": "Q5-EXP-S", "question_id": "Q5", "domain": "composting",
+      "framing": "EXP", "length": "S",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. How do I set up a simple composting system at home?"
+    },
+    {
+      "id": "Q5-EXP-M", "question_id": "Q5", "domain": "composting",
+      "framing": "EXP", "length": "M",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. I have a decent amount of kitchen scraps and yard waste — vegetable peels, coffee grounds, grass clippings, leaves — and feel like I should be doing something useful with them. I have a medium-sized backyard with space along a fence line. I've never composted before and I'm not sure where to start. How do I set up a simple composting system at home?"
+    },
+    {
+      "id": "Q5-EXP-L", "question_id": "Q5", "domain": "composting",
+      "framing": "EXP", "length": "L",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. I generate a fair amount of kitchen scraps each week — vegetable peels, coffee grounds, eggshells, fruit cores — along with grass clippings and fallen leaves from a couple of large trees in my yard. I've been throwing all of this in the trash and it feels wasteful, especially since I'm trying to build up organic matter in my garden beds. I have a medium-sized backyard with a fence line that gets partial sun where I could set up a system. I've looked at composting bins at the hardware store but the prices vary widely and I'm not sure what I actually need. I also live in a neighborhood where I'd want the setup to look reasonably tidy and not attract pests. I want to understand the basics: what goes in, what to avoid, how long it takes, and when I'll have finished compost I can actually use in my garden. How do I set up a simple composting system at home?"
+    },
+    {
+      "id": "Q5-PRO-S", "question_id": "Q5", "domain": "composting",
+      "framing": "PRO", "length": "S",
+      "text": "I'm a professional agronomist with a background in soil science. How do I set up a simple composting system at home?"
+    },
+    {
+      "id": "Q5-PRO-M", "question_id": "Q5", "domain": "composting",
+      "framing": "PRO", "length": "M",
+      "text": "I'm a professional agronomist with a background in soil science. I have a decent amount of kitchen scraps and yard waste — vegetable peels, coffee grounds, grass clippings, leaves — and feel like I should be doing something useful with them. I have a medium-sized backyard with space along a fence line. I've never composted before and I'm not sure where to start. How do I set up a simple composting system at home?"
+    },
+    {
+      "id": "Q5-PRO-L", "question_id": "Q5", "domain": "composting",
+      "framing": "PRO", "length": "L",
+      "text": "I'm a professional agronomist with a background in soil science. I generate a fair amount of kitchen scraps each week — vegetable peels, coffee grounds, eggshells, fruit cores — along with grass clippings and fallen leaves from a couple of large trees in my yard. I've been throwing all of this in the trash and it feels wasteful, especially since I'm trying to build up organic matter in my garden beds. I have a medium-sized backyard with a fence line that gets partial sun where I could set up a system. I've looked at composting bins at the hardware store but the prices vary widely and I'm not sure what I actually need. I also live in a neighborhood where I'd want the setup to look reasonably tidy and not attract pests. I want to understand the basics: what goes in, what to avoid, how long it takes, and when I'll have finished compost I can actually use in my garden. How do I set up a simple composting system at home?"
+    },
+
+    {
+      "id": "Q6-N-S", "question_id": "Q6", "domain": "water_conservation",
+      "framing": "N", "length": "S",
+      "text": "What's the best way to conserve water in a backyard garden?"
+    },
+    {
+      "id": "Q6-N-M", "question_id": "Q6", "domain": "water_conservation",
+      "framing": "N", "length": "M",
+      "text": "I live in an area with hot, dry summers, and I'm currently watering my 500 square foot vegetable garden by hand almost every day. My water bill spikes noticeably from June through September. I want to find realistic ways to use less water without my plants suffering. What's the best way to conserve water in a backyard garden?"
+    },
+    {
+      "id": "Q6-N-L", "question_id": "Q6", "domain": "water_conservation",
+      "framing": "N", "length": "L",
+      "text": "I live in the high desert of New Mexico, where summers are hot and dry and water is genuinely scarce. My garden is about 500 square feet and includes tomatoes, peppers, squash, and several herb beds. I currently water by hand with a hose, which takes about 20 minutes a day and my water bill is significantly higher from June through September. I've heard about drip irrigation, mulching, and rainwater harvesting but don't know where to start or which option gives the most benefit for the effort. My soil is sandy and doesn't hold moisture well, which I think makes the problem worse. I also have a flat roof on a small garden shed that I've been told could potentially be used to collect rainwater. I want practical, relatively low-cost changes I can make this season that will meaningfully reduce how much water I'm using without compromising my yields. What's the best way to conserve water in a backyard garden?"
+    },
+    {
+      "id": "Q6-NOV-S", "question_id": "Q6", "domain": "water_conservation",
+      "framing": "NOV", "length": "S",
+      "text": "I'm completely new to gardening and have never grown anything before. What's the best way to conserve water in a backyard garden?"
+    },
+    {
+      "id": "Q6-NOV-M", "question_id": "Q6", "domain": "water_conservation",
+      "framing": "NOV", "length": "M",
+      "text": "I'm completely new to gardening and have never grown anything before. I live in an area with hot, dry summers, and I'm currently watering my 500 square foot vegetable garden by hand almost every day. My water bill spikes noticeably from June through September. I want to find realistic ways to use less water without my plants suffering. What's the best way to conserve water in a backyard garden?"
+    },
+    {
+      "id": "Q6-NOV-L", "question_id": "Q6", "domain": "water_conservation",
+      "framing": "NOV", "length": "L",
+      "text": "I'm completely new to gardening and have never grown anything before. I live in the high desert of New Mexico, where summers are hot and dry and water is genuinely scarce. My garden is about 500 square feet and includes tomatoes, peppers, squash, and several herb beds. I currently water by hand with a hose, which takes about 20 minutes a day and my water bill is significantly higher from June through September. I've heard about drip irrigation, mulching, and rainwater harvesting but don't know where to start or which option gives the most benefit for the effort. My soil is sandy and doesn't hold moisture well, which I think makes the problem worse. I also have a flat roof on a small garden shed that I've been told could potentially be used to collect rainwater. I want practical, relatively low-cost changes I can make this season that will meaningfully reduce how much water I'm using without compromising my yields. What's the best way to conserve water in a backyard garden?"
+    },
+    {
+      "id": "Q6-MOD-S", "question_id": "Q6", "domain": "water_conservation",
+      "framing": "MOD", "length": "S",
+      "text": "I've been gardening for a couple of years but I'm still learning. What's the best way to conserve water in a backyard garden?"
+    },
+    {
+      "id": "Q6-MOD-M", "question_id": "Q6", "domain": "water_conservation",
+      "framing": "MOD", "length": "M",
+      "text": "I've been gardening for a couple of years but I'm still learning. I live in an area with hot, dry summers, and I'm currently watering my 500 square foot vegetable garden by hand almost every day. My water bill spikes noticeably from June through September. I want to find realistic ways to use less water without my plants suffering. What's the best way to conserve water in a backyard garden?"
+    },
+    {
+      "id": "Q6-MOD-L", "question_id": "Q6", "domain": "water_conservation",
+      "framing": "MOD", "length": "L",
+      "text": "I've been gardening for a couple of years but I'm still learning. I live in the high desert of New Mexico, where summers are hot and dry and water is genuinely scarce. My garden is about 500 square feet and includes tomatoes, peppers, squash, and several herb beds. I currently water by hand with a hose, which takes about 20 minutes a day and my water bill is significantly higher from June through September. I've heard about drip irrigation, mulching, and rainwater harvesting but don't know where to start or which option gives the most benefit for the effort. My soil is sandy and doesn't hold moisture well, which I think makes the problem worse. I also have a flat roof on a small garden shed that I've been told could potentially be used to collect rainwater. I want practical, relatively low-cost changes I can make this season that will meaningfully reduce how much water I'm using without compromising my yields. What's the best way to conserve water in a backyard garden?"
+    },
+    {
+      "id": "Q6-EXP-S", "question_id": "Q6", "domain": "water_conservation",
+      "framing": "EXP", "length": "S",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. What's the best way to conserve water in a backyard garden?"
+    },
+    {
+      "id": "Q6-EXP-M", "question_id": "Q6", "domain": "water_conservation",
+      "framing": "EXP", "length": "M",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. I live in an area with hot, dry summers, and I'm currently watering my 500 square foot vegetable garden by hand almost every day. My water bill spikes noticeably from June through September. I want to find realistic ways to use less water without my plants suffering. What's the best way to conserve water in a backyard garden?"
+    },
+    {
+      "id": "Q6-EXP-L", "question_id": "Q6", "domain": "water_conservation",
+      "framing": "EXP", "length": "L",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. I live in the high desert of New Mexico, where summers are hot and dry and water is genuinely scarce. My garden is about 500 square feet and includes tomatoes, peppers, squash, and several herb beds. I currently water by hand with a hose, which takes about 20 minutes a day and my water bill is significantly higher from June through September. I've heard about drip irrigation, mulching, and rainwater harvesting but don't know where to start or which option gives the most benefit for the effort. My soil is sandy and doesn't hold moisture well, which I think makes the problem worse. I also have a flat roof on a small garden shed that I've been told could potentially be used to collect rainwater. I want practical, relatively low-cost changes I can make this season that will meaningfully reduce how much water I'm using without compromising my yields. What's the best way to conserve water in a backyard garden?"
+    },
+    {
+      "id": "Q6-PRO-S", "question_id": "Q6", "domain": "water_conservation",
+      "framing": "PRO", "length": "S",
+      "text": "I'm a professional agronomist with a background in soil science. What's the best way to conserve water in a backyard garden?"
+    },
+    {
+      "id": "Q6-PRO-M", "question_id": "Q6", "domain": "water_conservation",
+      "framing": "PRO", "length": "M",
+      "text": "I'm a professional agronomist with a background in soil science. I live in an area with hot, dry summers, and I'm currently watering my 500 square foot vegetable garden by hand almost every day. My water bill spikes noticeably from June through September. I want to find realistic ways to use less water without my plants suffering. What's the best way to conserve water in a backyard garden?"
+    },
+    {
+      "id": "Q6-PRO-L", "question_id": "Q6", "domain": "water_conservation",
+      "framing": "PRO", "length": "L",
+      "text": "I'm a professional agronomist with a background in soil science. I live in the high desert of New Mexico, where summers are hot and dry and water is genuinely scarce. My garden is about 500 square feet and includes tomatoes, peppers, squash, and several herb beds. I currently water by hand with a hose, which takes about 20 minutes a day and my water bill is significantly higher from June through September. I've heard about drip irrigation, mulching, and rainwater harvesting but don't know where to start or which option gives the most benefit for the effort. My soil is sandy and doesn't hold moisture well, which I think makes the problem worse. I also have a flat roof on a small garden shed that I've been told could potentially be used to collect rainwater. I want practical, relatively low-cost changes I can make this season that will meaningfully reduce how much water I'm using without compromising my yields. What's the best way to conserve water in a backyard garden?"
+    },
+
+    {
+      "id": "Q7-N-S", "question_id": "Q7", "domain": "no_till",
+      "framing": "N", "length": "S",
+      "text": "How do I start a no-till garden bed from scratch?"
+    },
+    {
+      "id": "Q7-N-M", "question_id": "Q7", "domain": "no_till",
+      "framing": "N", "length": "M",
+      "text": "I have a 10x12 foot patch of lawn in my backyard that I want to convert into a vegetable garden. I don't want to till or dig the whole area up by hand. I've heard about no-till methods and they sound appealing but I don't know how to actually get started. How do I start a no-till garden bed from scratch?"
+    },
+    {
+      "id": "Q7-N-L", "question_id": "Q7", "domain": "no_till",
+      "framing": "N", "length": "L",
+      "text": "I have a 10x12 foot patch of established lawn in my backyard that I want to convert into a vegetable garden, ideally ready to plant by next spring. I've read about no-till and lasagna gardening methods and they appeal to me because I don't want to rent equipment or spend a weekend digging. The area currently has a mix of grass, clover, and some weeds. I'm not sure whether simply covering the grass will kill it, or whether I need to take additional steps. I've seen people use cardboard and wood chips as a base layer but I don't know the right sequence, the right thicknesses, or what to put on top. I also don't know how long to wait before I can plant in it — whether I need to start the process now to be ready by April, or whether a quick spring setup could work. My main goal is a low-effort setup that will actually suppress weeds and give me something I can maintain as a relatively new gardener. How do I start a no-till garden bed from scratch?"
+    },
+    {
+      "id": "Q7-NOV-S", "question_id": "Q7", "domain": "no_till",
+      "framing": "NOV", "length": "S",
+      "text": "I'm completely new to gardening and have never grown anything before. How do I start a no-till garden bed from scratch?"
+    },
+    {
+      "id": "Q7-NOV-M", "question_id": "Q7", "domain": "no_till",
+      "framing": "NOV", "length": "M",
+      "text": "I'm completely new to gardening and have never grown anything before. I have a 10x12 foot patch of lawn in my backyard that I want to convert into a vegetable garden. I don't want to till or dig the whole area up by hand. I've heard about no-till methods and they sound appealing but I don't know how to actually get started. How do I start a no-till garden bed from scratch?"
+    },
+    {
+      "id": "Q7-NOV-L", "question_id": "Q7", "domain": "no_till",
+      "framing": "NOV", "length": "L",
+      "text": "I'm completely new to gardening and have never grown anything before. I have a 10x12 foot patch of established lawn in my backyard that I want to convert into a vegetable garden, ideally ready to plant by next spring. I've read about no-till and lasagna gardening methods and they appeal to me because I don't want to rent equipment or spend a weekend digging. The area currently has a mix of grass, clover, and some weeds. I'm not sure whether simply covering the grass will kill it, or whether I need to take additional steps. I've seen people use cardboard and wood chips as a base layer but I don't know the right sequence, the right thicknesses, or what to put on top. I also don't know how long to wait before I can plant in it — whether I need to start the process now to be ready by April, or whether a quick spring setup could work. My main goal is a low-effort setup that will actually suppress weeds and give me something I can maintain as a relatively new gardener. How do I start a no-till garden bed from scratch?"
+    },
+    {
+      "id": "Q7-MOD-S", "question_id": "Q7", "domain": "no_till",
+      "framing": "MOD", "length": "S",
+      "text": "I've been gardening for a couple of years but I'm still learning. How do I start a no-till garden bed from scratch?"
+    },
+    {
+      "id": "Q7-MOD-M", "question_id": "Q7", "domain": "no_till",
+      "framing": "MOD", "length": "M",
+      "text": "I've been gardening for a couple of years but I'm still learning. I have a 10x12 foot patch of lawn in my backyard that I want to convert into a vegetable garden. I don't want to till or dig the whole area up by hand. I've heard about no-till methods and they sound appealing but I don't know how to actually get started. How do I start a no-till garden bed from scratch?"
+    },
+    {
+      "id": "Q7-MOD-L", "question_id": "Q7", "domain": "no_till",
+      "framing": "MOD", "length": "L",
+      "text": "I've been gardening for a couple of years but I'm still learning. I have a 10x12 foot patch of established lawn in my backyard that I want to convert into a vegetable garden, ideally ready to plant by next spring. I've read about no-till and lasagna gardening methods and they appeal to me because I don't want to rent equipment or spend a weekend digging. The area currently has a mix of grass, clover, and some weeds. I'm not sure whether simply covering the grass will kill it, or whether I need to take additional steps. I've seen people use cardboard and wood chips as a base layer but I don't know the right sequence, the right thicknesses, or what to put on top. I also don't know how long to wait before I can plant in it — whether I need to start the process now to be ready by April, or whether a quick spring setup could work. My main goal is a low-effort setup that will actually suppress weeds and give me something I can maintain as a relatively new gardener. How do I start a no-till garden bed from scratch?"
+    },
+    {
+      "id": "Q7-EXP-S", "question_id": "Q7", "domain": "no_till",
+      "framing": "EXP", "length": "S",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. How do I start a no-till garden bed from scratch?"
+    },
+    {
+      "id": "Q7-EXP-M", "question_id": "Q7", "domain": "no_till",
+      "framing": "EXP", "length": "M",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. I have a 10x12 foot patch of lawn in my backyard that I want to convert into a vegetable garden. I don't want to till or dig the whole area up by hand. I've heard about no-till methods and they sound appealing but I don't know how to actually get started. How do I start a no-till garden bed from scratch?"
+    },
+    {
+      "id": "Q7-EXP-L", "question_id": "Q7", "domain": "no_till",
+      "framing": "EXP", "length": "L",
+      "text": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. I have a 10x12 foot patch of established lawn in my backyard that I want to convert into a vegetable garden, ideally ready to plant by next spring. I've read about no-till and lasagna gardening methods and they appeal to me because I don't want to rent equipment or spend a weekend digging. The area currently has a mix of grass, clover, and some weeds. I'm not sure whether simply covering the grass will kill it, or whether I need to take additional steps. I've seen people use cardboard and wood chips as a base layer but I don't know the right sequence, the right thicknesses, or what to put on top. I also don't know how long to wait before I can plant in it — whether I need to start the process now to be ready by April, or whether a quick spring setup could work. My main goal is a low-effort setup that will actually suppress weeds and give me something I can maintain as a relatively new gardener. How do I start a no-till garden bed from scratch?"
+    },
+    {
+      "id": "Q7-PRO-S", "question_id": "Q7", "domain": "no_till",
+      "framing": "PRO", "length": "S",
+      "text": "I'm a professional agronomist with a background in soil science. How do I start a no-till garden bed from scratch?"
+    },
+    {
+      "id": "Q7-PRO-M", "question_id": "Q7", "domain": "no_till",
+      "framing": "PRO", "length": "M",
+      "text": "I'm a professional agronomist with a background in soil science. I have a 10x12 foot patch of lawn in my backyard that I want to convert into a vegetable garden. I don't want to till or dig the whole area up by hand. I've heard about no-till methods and they sound appealing but I don't know how to actually get started. How do I start a no-till garden bed from scratch?"
+    },
+    {
+      "id": "Q7-PRO-L", "question_id": "Q7", "domain": "no_till",
+      "framing": "PRO", "length": "L",
+      "text": "I'm a professional agronomist with a background in soil science. I have a 10x12 foot patch of established lawn in my backyard that I want to convert into a vegetable garden, ideally ready to plant by next spring. I've read about no-till and lasagna gardening methods and they appeal to me because I don't want to rent equipment or spend a weekend digging. The area currently has a mix of grass, clover, and some weeds. I'm not sure whether simply covering the grass will kill it, or whether I need to take additional steps. I've seen people use cardboard and wood chips as a base layer but I don't know the right sequence, the right thicknesses, or what to put on top. I also don't know how long to wait before I can plant in it — whether I need to start the process now to be ready by April, or whether a quick spring setup could work. My main goal is a low-effort setup that will actually suppress weeds and give me something I can maintain as a relatively new gardener. How do I start a no-till garden bed from scratch?"
+    }
+  ]
+}
