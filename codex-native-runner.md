@@ -49,36 +49,38 @@ may respond differently. Keep it clean.
 
 SETUP:
 
-Read prompts.json
-Confirm you have 105 prompts
-Create the output file: results/raw/outputs_codex-native_[YYYYMMDD_HHMMSS].csv
-with these headers:
-prompt_id, question_id, domain, framing, length, prompt_text, response, word_count, model
+1. Read prompts.json
+2. Confirm you have 105 prompts
+3. Create the output file: results/raw/outputs_codex-native_[YYYYMMDD_HHMMSS].csv
+   with these headers:
+   prompt_id, question_id, domain, framing, length, prompt_text, response, word_count, model
+
 BATCHING RULE:
-Group prompts by question_id. Run one batch per question domain.
-Within each batch, dispatch the 15 subagents in three parallel waves of 6, 6, and 3 fresh subagents.
-Wait for all 6 in the first wave to return before starting the second wave.
-Wait for all 6 in the second wave to return before starting the third wave.
-Wait for all 3 in the third wave to return before starting the next batch.
-After each batch completes, append the 15 results to the CSV immediately.
+ Group prompts by question_id. Run one batch per question domain.
+ Within each batch, dispatch the 15 subagents in three parallel waves of 6, 6, and 3 fresh subagents.
+ Wait for all 6 in the first wave to return before starting the second wave.
+ Wait for all 6 in the second wave to return before starting the third wave.
+ Wait for all 3 in the third wave to return before starting the next batch.
+ After each batch completes, append the 15 results to the CSV immediately.
 
 SUBAGENT INSTRUCTION TEMPLATE (use exactly this — nothing more):
 "Answer this question as helpfully as you can: [prompt text]"
 
 After all 7 batches complete:
 
-Print a summary: how many succeeded, any failures
-Generate the blank coding sheet at results/coding_sheet_codex-native_[timestamp].csv
-with these columns pre-filled: prompt_id, question_id, domain, framing, length, word_count
-and these columns empty: TD, CC, RS, APK, notes
+- Print a summary: how many succeeded, any failures
+- Generate the blank coding sheet at results/coding_sheet_codex-native_[timestamp].csv
+  with these columns pre-filled: prompt_id, question_id, domain, framing, length, word_count
+  and these columns empty: TD, CC, RS, APK, notes
+
 Batch order:
-Batch 1: all prompts where question_id = "Q1" (15 prompts)
-Batch 2: all prompts where question_id = "Q2" (15 prompts)
-Batch 3: all prompts where question_id = "Q3" (15 prompts)
-Batch 4: all prompts where question_id = "Q4" (15 prompts)
-Batch 5: all prompts where question_id = "Q5" (15 prompts)
-Batch 6: all prompts where question_id = "Q6" (15 prompts)
-Batch 7: all prompts where question_id = "Q7" (15 prompts)
+ Batch 1: all prompts where question_id = "Q1" (15 prompts)
+ Batch 2: all prompts where question_id = "Q2" (15 prompts)
+ Batch 3: all prompts where question_id = "Q3" (15 prompts)
+ Batch 4: all prompts where question_id = "Q4" (15 prompts)
+ Batch 5: all prompts where question_id = "Q5" (15 prompts)
+ Batch 6: all prompts where question_id = "Q6" (15 prompts)
+ Batch 7: all prompts where question_id = "Q7" (15 prompts)
 
 If a subagent fails or returns an error, record "ERROR" in the response column,
 note the prompt_id, and continue. Do not retry — move on and flag it at the end.
