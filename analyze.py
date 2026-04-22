@@ -5,8 +5,17 @@ AI Framing Study — Analysis Script
 Reads a completed coding sheet and outputs summary statistics.
 
 Usage:
-    python analyze.py --scores results/coding_sheet_claude_20260422.csv
-    python analyze.py --scores results/coding_sheet_claude_20260422.csv --compare results/coding_sheet_gpt_20260422.csv
+    # Single model
+    python analyze.py --scores results/coding_sheet_claude_20260422.csv --label "Claude Haiku"
+
+    # Two models (pairwise comparison)
+    python analyze.py --scores results/coding_sheet_claude_20260422.csv --label "Claude Haiku" \
+                      --compare results/coding_sheet_gpt_20260422.csv --compare-label "GPT-4o"
+
+    # Three or more models (multi-model comparison table)
+    python analyze.py --scores results/coding_sheet_claude_20260422.csv --label "Claude Haiku" \
+                      --compare results/coding_sheet_gpt_20260422.csv --compare-label "GPT-4o" \
+                      --compare results/coding_sheet_gemini_20260422.csv --compare-label "Gemini 1.5"
 """
 
 import argparse
@@ -151,43 +160,73 @@ def analyze(path, label=None):
             print(f"  {q_id} | {dim}: NOV={nov_val} → EXP={exp_val} (Δ={diff:.1f})")
 
 
-def compare(path_a, path_b, label_a, label_b):
-    rows_a = load_scores(path_a)
-    rows_b = load_scores(path_b)
+def compare_multi(all_rows, all_labels):
+    """Compare N models in a single table, grouped by framing then dimension."""
+    col_w = 8
+    label_w = 22
 
     print(f"\n{'#'*60}")
-    print(f"  Model Comparison: {label_a} vs {label_b}")
+    print(f"  Multi-Model Comparison ({len(all_labels)} models)")
     print(f"{'#'*60}")
 
-    for framing in FRAMING_ORDER:
-        group_a = [r for r in rows_a if r["framing"] == framing]
-        group_b = [r for r in rows_b if r["framing"] == framing]
-        label = FRAMING_LABELS.get(framing, framing)
-        print(f"\n  {label}:")
+    # --- By framing ---
+    for section_title, group_order, group_labels, group_key in [
+        ("By Framing Level", FRAMING_ORDER, FRAMING_LABELS, "framing"),
+        ("By Prompt Length", LENGTH_ORDER, LENGTH_LABELS, "length"),
+    ]:
+        print(f"\n{'='*60}")
+        print(f"  {section_title}")
+        print(f"{'='*60}")
         for dim in DIMENSIONS:
-            a_val = mean([r[dim] for r in group_a])
-            b_val = mean([r[dim] for r in group_b])
-            diff = round(b_val - a_val, 2) if a_val is not None and b_val is not None else None
-            diff_str = f"  Δ={diff:+.2f}" if diff is not None else ""
-            print(f"    {dim}: {label_a}={fmt(a_val).strip()}  {label_b}={fmt(b_val).strip()}{diff_str}")
+            header = f"  {dim:<6}" + "".join(f"{lbl:>{col_w}}" for lbl in all_labels)
+            print(header)
+            print("  " + "-" * (6 + col_w * len(all_labels)))
+            for key in group_order:
+                row_str = f"  {group_labels.get(key, key):<6}"
+                for rows in all_rows:
+                    group = [r for r in rows if r[group_key] == key]
+                    row_str += fmt(mean([r[dim] for r in group]), col_w)
+                print(row_str)
+            print()
+
+    # --- Framing × Length interaction (TD only, first model vs others) ---
+    print(f"\n{'='*60}")
+    print("  Framing × Length Interaction — TD (all models)")
+    print(f"{'='*60}")
+    for rows, label in zip(all_rows, all_labels):
+        print(f"\n  {label}:")
+        header = f"    {'Framing':<16}" + "".join(f"{LENGTH_LABELS[l]:>10}" for l in LENGTH_ORDER)
+        print(header)
+        print("    " + "-" * (16 + 10 * len(LENGTH_ORDER)))
+        for f_key in FRAMING_ORDER:
+            row_str = f"    {FRAMING_LABELS.get(f_key, f_key):<16}"
+            for l_key in LENGTH_ORDER:
+                group = [r for r in rows if r["framing"] == f_key and r["length"] == l_key]
+                row_str += fmt(mean([r["TD"] for r in group]), 10)
+            print(row_str)
 
 
 def main():
     parser = argparse.ArgumentParser(description="Analyze scored rubric results.")
     parser.add_argument("--scores", required=True, help="Path to completed coding sheet CSV.")
-    parser.add_argument("--label", default=None, help="Label for this model (e.g. 'Claude Sonnet').")
-    parser.add_argument("--compare", default=None, help="Path to a second coding sheet to compare against.")
-    parser.add_argument("--compare-label", default=None, help="Label for the comparison model.")
+    parser.add_argument("--label", default=None, help="Label for this model (e.g. 'Claude Haiku').")
+    parser.add_argument("--compare", action="append", default=[], metavar="PATH",
+                        help="Path to an additional coding sheet. Repeatable for 3+ models.")
+    parser.add_argument("--compare-label", action="append", default=[], metavar="LABEL",
+                        help="Label for each --compare model, in the same order.")
     args = parser.parse_args()
 
-    analyze(args.scores, args.label)
+    primary_label = args.label or args.scores
+    analyze(args.scores, primary_label)
 
     if args.compare:
-        compare(
-            args.scores, args.compare,
-            args.label or args.scores,
-            args.compare_label or args.compare,
-        )
+        all_paths = [args.scores] + args.compare
+        all_labels = [primary_label] + args.compare_label
+        # Pad missing labels with filenames
+        while len(all_labels) < len(all_paths):
+            all_labels.append(all_paths[len(all_labels)])
+        all_rows = [load_scores(p) for p in all_paths]
+        compare_multi(all_rows, all_labels)
 
 
 if __name__ == "__main__":
