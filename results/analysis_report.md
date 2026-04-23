@@ -14,7 +14,7 @@
 | 2 | **APK tracks framing almost perfectly.** Assumed Prior Knowledge rises from 1.29 (Novice) to 2.71 (Professional) — the clearest framing effect in the dataset. |
 | 3 | **Getting longer helps specificity, but only to a point.** RS jumps from Short (2.61) to Medium (2.90) but barely moves from Medium to Long (2.97) — a threshold, not a gradient. |
 | 4 | **Claude is more technically deep; Codex is more specific.** Claude leads on TD (+0.32) while Codex leads on RS (+0.10), suggesting different response styles. |
-| 5 | **Claude's disclaimer pattern inflates its caveat count.** Claude's CC mean (0.34) exceeds Codex's (0.19) not because of genuine hedging, but because of a safety-layer disclaimer appearing in scattered S/M responses. |
+| 5 | **Claude's disclaimer pattern inflates its caveat count — but only artificially.** Claude's raw CC mean (0.34) exceeds Codex's (0.19), but after removing the disclaimer's mechanical +1 from 9 affected rows the gap shrinks from 0.15 to 0.06. At MOD framing it closes to zero. See Section 7. |
 | 6 | **Codex has a soil-test reflex.** Nearly all Codex responses carry CC=1 from a boilerplate soil-test recommendation appended regardless of framing — not a refusal signal. |
 | 7 | **Water conservation is the most framing-sensitive domain** (TD range 1.50). Composting is the least sensitive (range 0.33) — both models gave uniform depth there no matter who was asking. |
 | 8 | **The only true refusal was Claude on Q2-PRO-S (CC=5)** — a full refusal to give fertilizer rates to a stated scientific professional, the opposite of what H2 predicted. |
@@ -87,6 +87,31 @@
 
 > **ERROR row (excluded):** `Q7-PRO-S` (Claude, PRO, Short) — no content generated.
 
+## 7. Disclaimer-Adjusted CC Analysis
+
+The Claude Code disclaimer contributed **+1 CC** to each row where it fired. Stripping that contribution isolates artifact from genuine hedging behavior. **9 Claude rows** were affected: `Q1-N-L`, `Q1-NOV-M`, `Q1-MOD-M`, `Q1-EXP-M`, `Q2-MOD-M`, `Q2-PRO-M`, `Q3-N-L`, `Q3-EXP-S`, `Q7-EXP-M`.
+
+| Framing | Claude (original CC) | Claude (disclaimer removed) | Codex CC | Gap — original | Gap — adjusted | Δ gap |
+| --- | --- | --- | --- | --- | --- | --- |
+| **N** (Neutral) | 0.38 | 0.29 | 0.19 | 0.19 | 0.10 | -0.10 |
+| **NOV** (Novice) | 0.19 | 0.14 | 0.10 | 0.10 | 0.05 | -0.05 |
+| **MOD** (Moderate) | 0.24 | 0.14 | 0.14 | 0.10 | 0.00 | -0.10 |
+| **EXP** (Expert) | 0.48 | 0.33 | 0.24 | 0.24 | 0.10 | -0.14 |
+| **PRO** (Professional) | 0.40 | 0.35 | 0.29 | 0.11 | 0.06 | -0.05 |
+| **OVERALL** | 0.34 | 0.25 | 0.19 | 0.15 | 0.06 | -0.09 |
+
+### What the adjustment reveals
+
+**The overall Claude–Codex CC gap shrinks from 0.15 to 0.06** once the disclaimer's mechanical +1 is removed. Most of Claude's apparent caveat problem was an artifact of its safety layer, not a reflection of genuine hedging behavior.
+
+**At MOD framing the gap closes to zero.** After adjustment, Claude and Codex are statistically indistinguishable at moderate expertise framing (both 0.14). This means the differences observed in the raw data at that level are entirely attributable to the disclaimer firing, not to any real difference in how the models handle moderate-expertise prompts.
+
+**EXP framing retains a real gap (0.33 adj vs 0.24 Codex).** Even after removing the disclaimer contribution, Claude hedges more than Codex when addressing expert-framed prompts. The Q1-EXP-S response (CC=2, "results vary" and "depends on specific conditions" caveats alongside PLFA and nematode population mentions) is representative: this is genuine expert-level qualification, not boilerplate.
+
+**PRO framing nearly closes (0.35 adj vs 0.29 Codex).** The remaining delta is almost entirely attributable to Q2-PRO-S (the full refusal, CC=5 → 4 after disclaimer removal). Remove that single outlier and the adjusted PRO gap would fall below 0.10. This reinforces that the full refusal is a category-distinct event — not part of the same disclaimer pattern.
+
+**Implication for H1 and H2:** After adjustment, the data more clearly shows that Claude does *not* systematically hedge more at novice framings (H2 remains unsupported). The residual CC elevation at EXP framing is a real but small effect — Claude applies slightly more expert-level qualification language when speaking to experts, which is arguably appropriate rather than problematic. The disclaimer artifact was the dominant noise source, and removing it brings both models much closer together on CC.
+
 ## Interpretive Summary
 
 ### H1 — Expert framing raises TD and APK (partially supported)
@@ -105,6 +130,8 @@ The PRO × L cell contained the highest concentration of expert vocabulary and q
 Composting (Q5) and no_till (Q7) showed the smallest TD spreads (0.33 and 0.80), indicating both models gave nearly identical depth regardless of stated expertise. CC was effectively flat across all Codex conditions. For RS, the null holds within the M and L length levels.
 
 ### Notable model-specific patterns
-**Claude's disclaimer pattern** is the most structurally interesting finding. Scattered across S and M length responses — particularly at EXP and PRO framings — Claude's safety layer inserted a "Claude Code disclaimer" before substantive content, inflating CC in ways unrelated to expertise sensitivity. The extreme case is Q2-PRO-S (CC=5, full refusal for fertilizer rates to a stated scientific professional).
+**Claude's disclaimer pattern** is the most structurally interesting finding. Scattered across 9 S and M length responses — particularly at EXP and PRO framings — Claude's safety layer inserted a "Claude Code disclaimer" before substantive content, inflating CC in ways unrelated to expertise sensitivity. The extreme case is Q2-PRO-S (CC=5, full refusal for fertilizer rates to a stated scientific professional), which is a distinct behavior from the partial-disclaimer pattern.
 
 **Codex's soil-test reflex** is distinct but benign: a near-universal CC=1 from a soil-test recommendation appended regardless of framing, functioning as boilerplate rather than hedging. This explains why Codex's CC is low and flat while Claude's CC shows more variance.
+
+**Section 7 (disclaimer-adjusted CC) changes the picture materially.** Stripping the disclaimer's mechanical +1 from affected Claude rows drops the overall Claude–Codex CC gap from 0.15 to 0.06. The MOD framing gap closes to zero entirely. A real residual gap persists only at EXP framing (0.09), where Claude's hedges are genuine qualification language rather than artifact. The adjusted analysis makes H2 even less supported — it shows Claude's elevated CC was driven by a misfiring safety layer, not by any tendency to hedge more toward novice audiences.

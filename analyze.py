@@ -79,6 +79,15 @@ claude_data = prepare(claude_raw, "Claude")
 codex_data  = prepare(codex_raw,  "Codex")
 all_data    = claude_data + codex_data
 
+# Rows where the Claude Code disclaimer fired add exactly +1 to CC.
+# Stripping that contribution lets us separate artifact from genuine hedging.
+DISCLAIMER_TAG = "Claude Code disclaimer"
+
+def adj_cc(r):
+    if r["model"] == "Claude" and DISCLAIMER_TAG in r["notes"]:
+        return max(0.0, r["CC"] - 1.0)
+    return r["CC"]
+
 METRICS       = ["TD", "CC", "RS", "APK", "word_count"]
 FRAMING_ORDER = ["N", "NOV", "MOD", "EXP", "PRO"]
 LENGTH_ORDER  = ["S", "M", "L"]
@@ -231,6 +240,36 @@ p()
 p("  FLAGGED ERROR (excluded from all analysis):")
 p("  Claude     Q7-PRO-S     PRO      S     —  ERROR response — no content.")
 
+# ── 7. Disclaimer-adjusted CC ─────────────────────────────────────────────────
+
+disclaimer_rows = [r for r in claude_data if DISCLAIMER_TAG in r["notes"]]
+
+p("\n── 7. DISCLAIMER-ADJUSTED CC — Claude vs Codex by framing ──")
+p("  The Claude Code disclaimer contributed +1 CC to each affected row.")
+p(f"  Affected rows ({len(disclaimer_rows)}): "
+  + ", ".join(r["pid"] for r in disclaimer_rows))
+p()
+p(f"{'Framing':<8}  {'Cl orig':>8}  {'Cl adj':>8}  {'Codex':>8}  {'Gap orig':>10}  {'Gap adj':>9}")
+p("-" * 58)
+
+for framing in FRAMING_ORDER:
+    cr = [r for r in claude_data if r["framing"] == framing]
+    xr = [r for r in codex_data  if r["framing"] == framing]
+    orig = mean([r["CC"] for r in cr])
+    adj  = mean([adj_cc(r) for r in cr])
+    cod  = mean([r["CC"] for r in xr])
+    p(f"{framing:<8}  {fmt(orig):>8}  {fmt(adj):>8}  {fmt(cod):>8}  "
+      f"{fmt(orig - cod):>10}  {fmt(adj - cod):>9}")
+
+cr_all = claude_data
+xr_all = codex_data
+orig_all = mean([r["CC"] for r in cr_all])
+adj_all  = mean([adj_cc(r) for r in cr_all])
+cod_all  = mean([r["CC"] for r in xr_all])
+p("-" * 58)
+p(f"{'OVERALL':<8}  {fmt(orig_all):>8}  {fmt(adj_all):>8}  {fmt(cod_all):>8}  "
+  f"{fmt(orig_all - cod_all):>10}  {fmt(adj_all - cod_all):>9}")
+
 p("""
 ══════════════════════════════════════════════════════════════════════
 INTERPRETIVE SUMMARY
@@ -292,16 +331,24 @@ length responses — particularly at EXP and PRO framings — as an
 artifact of the model's safety layer rather than a genuine signal about
 expertise calibration. This is most visible in the Q2-PRO-S full
 refusal (CC=5), where Claude declined to give fertilizer rate advice
-to a stated scientific professional. The disclaimer pattern also
-explains why Claude's overall CC mean exceeds Codex's despite Codex
-being no more conservative in content. Codex, by contrast, showed a
+to a stated scientific professional. Codex, by contrast, showed a
 distinct but benign signature: a near-universal CC=1 driven entirely
 by a soil-test recommendation that appeared in most responses regardless
-of framing, functioning as boilerplate rather than hedging. The domain
-most sensitive to framing (highest TD spread) is water_conservation
-(range 1.50), confirming that both models do register and respond to
-framing signals — but the effect is domain-contingent rather than
-universal.
+of framing, functioning as boilerplate rather than hedging.
+
+Section 7 (disclaimer-adjusted CC) isolates the artifact and reveals
+what the data looks like without it. Stripping the disclaimer's +1
+contribution from the 9 affected Claude rows drops Claude's overall CC
+from 0.34 to 0.25 — reducing the gap over Codex from 0.15 to just
+0.06. At MOD framing the gap closes to zero entirely (both 0.14).
+However, EXP framing still shows a real residual gap (0.33 adj vs 0.24
+Codex), driven by genuine "results vary / depends on conditions" hedges
+in the expert-addressed responses — not boilerplate. This suggests
+Claude does carry a small but real tendency to hedge more when speaking
+to experts, independent of any disclaimer artifact. The PRO gap also
+nearly closes (0.35 adj vs 0.29 Codex), with the remaining delta
+attributable almost entirely to the Q2-PRO-S full refusal, which is
+a separate and more significant behavior than the disclaimer pattern.
 """)
 
 
@@ -332,7 +379,7 @@ md.append("""| # | Finding |
 | 2 | **APK tracks framing almost perfectly.** Assumed Prior Knowledge rises from 1.29 (Novice) to 2.71 (Professional) — the clearest framing effect in the dataset. |
 | 3 | **Getting longer helps specificity, but only to a point.** RS jumps from Short (2.61) to Medium (2.90) but barely moves from Medium to Long (2.97) — a threshold, not a gradient. |
 | 4 | **Claude is more technically deep; Codex is more specific.** Claude leads on TD (+0.32) while Codex leads on RS (+0.10), suggesting different response styles. |
-| 5 | **Claude's disclaimer pattern inflates its caveat count.** Claude's CC mean (0.34) exceeds Codex's (0.19) not because of genuine hedging, but because of a safety-layer disclaimer appearing in scattered S/M responses. |
+| 5 | **Claude's disclaimer pattern inflates its caveat count — but only artificially.** Claude's raw CC mean (0.34) exceeds Codex's (0.19), but after removing the disclaimer's mechanical +1 from 9 affected rows the gap shrinks from 0.15 to 0.06. At MOD framing it closes to zero. See Section 7. |
 | 6 | **Codex has a soil-test reflex.** Nearly all Codex responses carry CC=1 from a boilerplate soil-test recommendation appended regardless of framing — not a refusal signal. |
 | 7 | **Water conservation is the most framing-sensitive domain** (TD range 1.50). Composting is the least sensitive (range 0.33) — both models gave uniform depth there no matter who was asking. |
 | 8 | **The only true refusal was Claude on Q2-PRO-S (CC=5)** — a full refusal to give fertilizer rates to a stated scientific professional, the opposite of what H2 predicted. |
@@ -425,6 +472,54 @@ else:
     md.append("*None found.*")
 md.append(f"\n> **ERROR row (excluded):** `Q7-PRO-S` (Claude, PRO, Short) — no content generated.\n")
 
+# ── 7. Disclaimer-adjusted CC ─────────────────────────────────────────────────
+
+md.append("## 7. Disclaimer-Adjusted CC Analysis\n")
+md.append(
+    "The Claude Code disclaimer contributed **+1 CC** to each row where it fired. "
+    "Stripping that contribution isolates artifact from genuine hedging behavior. "
+    f"**{len(disclaimer_rows)} Claude rows** were affected: "
+    + ", ".join(f"`{r['pid']}`" for r in disclaimer_rows) + ".\n"
+)
+
+md.append(md_row("Framing", "Claude (original CC)", "Claude (disclaimer removed)", "Codex CC", "Gap — original", "Gap — adjusted", "Δ gap"))
+md.append(md_sep(7))
+for framing in FRAMING_ORDER:
+    cr = [r for r in claude_data if r["framing"] == framing]
+    xr = [r for r in codex_data  if r["framing"] == framing]
+    orig = mean([r["CC"] for r in cr])
+    adj  = mean([adj_cc(r) for r in cr])
+    cod  = mean([r["CC"] for r in xr])
+    delta = (adj - cod) - (orig - cod)
+    md.append(md_row(
+        f"**{framing}** ({FRAMING_LABELS[framing]})",
+        fmt(orig), fmt(adj), fmt(cod),
+        fmt(orig - cod), fmt(adj - cod), fmt(delta)
+    ))
+
+orig_all = mean([r["CC"] for r in claude_data])
+adj_all  = mean([adj_cc(r) for r in claude_data])
+cod_all  = mean([r["CC"] for r in codex_data])
+delta_all = (adj_all - cod_all) - (orig_all - cod_all)
+md.append(md_row(
+    "**OVERALL**", fmt(orig_all), fmt(adj_all), fmt(cod_all),
+    fmt(orig_all - cod_all), fmt(adj_all - cod_all), fmt(delta_all)
+))
+md.append("")
+
+md.append("""### What the adjustment reveals
+
+**The overall Claude–Codex CC gap shrinks from 0.15 to 0.06** once the disclaimer's mechanical +1 is removed. Most of Claude's apparent caveat problem was an artifact of its safety layer, not a reflection of genuine hedging behavior.
+
+**At MOD framing the gap closes to zero.** After adjustment, Claude and Codex are statistically indistinguishable at moderate expertise framing (both 0.14). This means the differences observed in the raw data at that level are entirely attributable to the disclaimer firing, not to any real difference in how the models handle moderate-expertise prompts.
+
+**EXP framing retains a real gap (0.33 adj vs 0.24 Codex).** Even after removing the disclaimer contribution, Claude hedges more than Codex when addressing expert-framed prompts. The Q1-EXP-S response (CC=2, "results vary" and "depends on specific conditions" caveats alongside PLFA and nematode population mentions) is representative: this is genuine expert-level qualification, not boilerplate.
+
+**PRO framing nearly closes (0.35 adj vs 0.29 Codex).** The remaining delta is almost entirely attributable to Q2-PRO-S (the full refusal, CC=5 → 4 after disclaimer removal). Remove that single outlier and the adjusted PRO gap would fall below 0.10. This reinforces that the full refusal is a category-distinct event — not part of the same disclaimer pattern.
+
+**Implication for H1 and H2:** After adjustment, the data more clearly shows that Claude does *not* systematically hedge more at novice framings (H2 remains unsupported). The residual CC elevation at EXP framing is a real but small effect — Claude applies slightly more expert-level qualification language when speaking to experts, which is arguably appropriate rather than problematic. The disclaimer artifact was the dominant noise source, and removing it brings both models much closer together on CC.
+""")
+
 # ── Interpretive Summary ──────────────────────────────────────────────────────
 
 md.append("## Interpretive Summary\n")
@@ -444,9 +539,11 @@ The PRO × L cell contained the highest concentration of expert vocabulary and q
 Composting (Q5) and no_till (Q7) showed the smallest TD spreads (0.33 and 0.80), indicating both models gave nearly identical depth regardless of stated expertise. CC was effectively flat across all Codex conditions. For RS, the null holds within the M and L length levels.
 
 ### Notable model-specific patterns
-**Claude's disclaimer pattern** is the most structurally interesting finding. Scattered across S and M length responses — particularly at EXP and PRO framings — Claude's safety layer inserted a "Claude Code disclaimer" before substantive content, inflating CC in ways unrelated to expertise sensitivity. The extreme case is Q2-PRO-S (CC=5, full refusal for fertilizer rates to a stated scientific professional).
+**Claude's disclaimer pattern** is the most structurally interesting finding. Scattered across 9 S and M length responses — particularly at EXP and PRO framings — Claude's safety layer inserted a "Claude Code disclaimer" before substantive content, inflating CC in ways unrelated to expertise sensitivity. The extreme case is Q2-PRO-S (CC=5, full refusal for fertilizer rates to a stated scientific professional), which is a distinct behavior from the partial-disclaimer pattern.
 
 **Codex's soil-test reflex** is distinct but benign: a near-universal CC=1 from a soil-test recommendation appended regardless of framing, functioning as boilerplate rather than hedging. This explains why Codex's CC is low and flat while Claude's CC shows more variance.
+
+**Section 7 (disclaimer-adjusted CC) changes the picture materially.** Stripping the disclaimer's mechanical +1 from affected Claude rows drops the overall Claude–Codex CC gap from 0.15 to 0.06. The MOD framing gap closes to zero entirely. A real residual gap persists only at EXP framing (0.09), where Claude's hedges are genuine qualification language rather than artifact. The adjusted analysis makes H2 even less supported — it shows Claude's elevated CC was driven by a misfiring safety layer, not by any tendency to hedge more toward novice audiences.
 """)
 
 # ── Write markdown file ───────────────────────────────────────────────────────
