@@ -1,0 +1,92 @@
+Regenerative Agriculture AI Study Analysis
+Workspace: C:\Users\UK551ED\OneDrive - EY\Documents\Codex\Regenerative Ag
+Claude scored CSV: C:\Users\UK551ED\OneDrive - EY\Documents\Codex\Regenerative Ag\results\Claude Code\coding_sheet_claude-native_20260422_163943_scored_rater2_codex.csv
+Codex scored CSV: C:\Users\UK551ED\OneDrive - EY\Documents\Codex\Regenerative Ag\results\Codex\coding_sheet_codex-native_20260422_122542_scored_rater2_codex.csv
+Rows analyzed: Claude=104, Codex=105, Total=209
+Note: Claude prompt Q7-PRO-S is an ERROR response with word_count = 0 and is excluded from all means.
+Note: 'standard Claude disclaimers' are rows tagged as 'Refusal preface; scored on substantive guidance.' and are separated from the stronger refusal case.
+
+1. Overall means by framing level
+Framing  TD    CC    RS    APK   word_count  n 
+-------  ----  ----  ----  ----  ----------  --
+N        3.31  0.36  2.88  2.29  354.40      42
+NOV      3.07  0.19  2.90  2.05  392.17      42
+MOD      3.38  0.19  2.90  2.38  382.43      42
+EXP      3.90  0.31  2.79  2.86  410.02      42
+PRO      4.46  0.32  2.76  3.00  451.41      41
+
+2. Overall means by length
+Length  TD    CC    RS    APK   word_count  n 
+------  ----  ----  ----  ----  ----------  --
+S       3.30  0.38  2.68  2.26  281.19      69
+M       3.57  0.29  2.86  2.46  354.94      70
+L       3.99  0.16  3.00  2.81  555.70      70
+
+3. Framing x length interaction table (mean TD and RS)
+Framing  S TD  S RS  M TD  M RS  L TD  L RS
+-------  ----  ----  ----  ----  ----  ----
+N        2.86  2.71  3.21  2.93  3.86  3.00
+NOV      2.64  2.79  3.00  2.93  3.57  3.00
+MOD      3.00  2.86  3.36  2.86  3.79  3.00
+EXP      3.86  2.57  3.79  2.79  4.07  3.00
+PRO      4.23  2.46  4.50  2.79  4.64  3.00
+
+4. Model comparison
+Metric      Claude  Codex   Diff_Claude_minus_Codex
+----------  ------  ------  -----------------------
+TD          3.61    3.64    -0.03                  
+CC          0.39    0.15    0.24                   
+RS          2.88    2.82    0.06                   
+APK         2.49    2.53    -0.04                  
+word_count  419.05  376.82  42.23                  
+
+4b. CC impact of standard Claude disclaimers
+Scope     original_CC  adjusted_CC  delta  disclaimer_rows
+--------  -----------  -----------  -----  ---------------
+Claude    0.39         0.24         -0.15  8              
+Codex     0.15         0.15         0.00   0              
+All rows  0.27         0.20         -0.08  8              
+
+4c. Framing-level CC comparison before and after disclaimer adjustment
+Framing  original_CC  adjusted_CC  delta  disclaimer_rows
+-------  -----------  -----------  -----  ---------------
+N        0.36         0.26         -0.10  2              
+NOV      0.19         0.14         -0.05  1              
+MOD      0.19         0.10         -0.10  2              
+EXP      0.31         0.21         -0.10  2              
+PRO      0.32         0.27         -0.05  1              
+
+5. Domain-level TD spread
+Question  Domain              min_mean_TD  max_mean_TD  range
+--------  ------------------  -----------  -----------  -----
+Q5        composting          2.00         4.17         2.17 
+Q6        water_conservation  3.17         4.83         1.67 
+Q1        soil_health         2.83         4.50         1.67 
+Q4        cover_crops         3.33         4.67         1.33 
+Q3        pest_control        3.33         4.67         1.33 
+Q7        no_till             3.17         4.00         0.83 
+Q2        fertilizer          3.50         4.33         0.83 
+
+6. CC anomalies (CC >= 3)
+prompt_id  model   framing  length  CC     notes                       
+---------  ------  -------  ------  -----  ----------------------------
+Q2-PRO-S   Claude  PRO      S       3      Refusal/deflection response.
+Q7-PRO-S   Claude  PRO      S       ERROR  ERROR response ? no content.
+
+Interpretive summary
+The clearest framing effect is on technical depth and assumed prior knowledge, not on caveat count.
+H1 is partially supported: expert-framed prompts outperformed novice framing on TD (4.18 for EXP/PRO vs 3.07 for NOV) and APK (2.93 vs 2.05).
+Within the framing ladder, TD rises from 3.07 for NOV to 3.90 for EXP and 4.46 for PRO, while APK rises from 2.05 for NOV to 2.86 for EXP and 3.00 for PRO.
+The CC portion of H1 is not supported, because expert framing does not reduce caveats relative to novice framing (0.31 for EXP/PRO vs 0.19 for NOV).
+H2 is not supported overall: novice prompts do not attract more caveats, and NOV is tied for the lowest mean CC at 0.19.
+The largest caveat spike is instead Claude's refusal/disclaimer behavior, especially the Q2-PRO-S partial refusal with CC=3 and several CC=2 'refusal preface' cases scattered across N, MOD, EXP, and PRO.
+There are 8 standard Claude disclaimer-preface rows, and treating those routine prefaces as non-substantive caveats drops Claude's mean CC from 0.39 to 0.24.
+That same adjustment lowers pooled CC from 0.27 to 0.20, showing that part of the visible caveat signal comes from Claude's interface-style prefacing rather than the agronomic advice itself.
+After that adjustment, the CC contrast relevant to H1 still stays flat rather than novice-heavy (0.24 for EXP/PRO vs 0.14 for NOV).
+H3 is supported: recommendation specificity increases with prompt length, moving from RS 2.68 for S to 2.86 for M and 3.00 for L.
+Length also raises TD and APK while reducing caveats, with TD climbing from 3.30 to 3.99 and CC falling from 0.38 to 0.16.
+H4 is supported for TD but not uniquely for RS: PRO-L is the single highest-TD cell at 4.64, but RS reaches the ceiling of 3.00 in every L cell, not just EXP/PRO-L.
+At the domain level, composting shows the strongest framing sensitivity in TD, followed by water conservation and soil health, while fertilizer and no-till are comparatively flatter.
+Model differences are modest on TD, RS, and APK, but Claude carries a much higher mean CC than Codex (0.39 vs 0.15) because of those disclaimer/refusal prefacing behaviors.
+Codex shows a different caveat pattern: its nonzero CCs cluster around repeated fertilizer and some cover-crop responses, consistent with a recurring soil-test recommendation rather than broader hesitation.
+Overall, the null is not the best global description because framing and length clearly shape TD, APK, and RS, but it remains partly valid for CC, where most cells are flat and a few model-specific behaviors drive the visible differences.
