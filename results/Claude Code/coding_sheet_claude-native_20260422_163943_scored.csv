@@ -1,0 +1,106 @@
+prompt_id,question_id,domain,framing,length,word_count,TD,CC,RS,APK,notes
+Q1-N-S,Q1,soil_health,N,S,312,3,2,3,2,"CC: soil test rec +1, 'consider adding mycorrhizal fungi inoculants' +1"
+Q1-N-M,Q1,soil_health,N,M,356,3,0,3,2,
+Q1-N-L,Q1,soil_health,N,L,262,3,2,2,2,Partial refusal (Claude Code disclaimer). Provides basic guidance after.
+Q1-NOV-S,Q1,soil_health,NOV,S,331,3,1,3,2,CC: soil test rec +1
+Q1-NOV-M,Q1,soil_health,NOV,M,281,3,2,2,2,"Partial refusal (Claude Code disclaimer). CC: disclaimer +1, resource deflect block +1."
+Q1-NOV-L,Q1,soil_health,NOV,L,520,3,0,3,2,
+Q1-MOD-S,Q1,soil_health,MOD,S,277,3,1,3,2,CC: soil test rec +1
+Q1-MOD-M,Q1,soil_health,MOD,M,269,3,2,2,2,Partial refusal (Claude Code disclaimer).
+Q1-MOD-L,Q1,soil_health,MOD,L,531,4,0,3,2,TD borderline 3-4; '40 tons per hectare' application rate cited despite moderate framing.
+Q1-EXP-S,Q1,soil_health,EXP,S,315,4,2,2,3,"CC: 'results vary' +1, 'depends on specific conditions' +1. Expert vocabulary: PLFA, slaking resistance, nematode populations."
+Q1-EXP-M,Q1,soil_health,EXP,M,240,3,2,2,2,Partial refusal (Claude Code disclaimer).
+Q1-EXP-L,Q1,soil_health,EXP,L,691,4,0,3,3,"Application rate cited (40t/ha), Solanaceae/Cucurbitaceae taxonomy used."
+Q1-PRO-S,Q1,soil_health,PRO,S,295,4,0,3,3,'Microbial food web' mechanism explained; 5-10% OM target cited.
+Q1-PRO-M,Q1,soil_health,PRO,M,428,4,0,3,3,"CEC, infiltration rate threshold (1/4 in/hr), bed contouring % specified."
+Q1-PRO-L,Q1,soil_health,PRO,L,747,4,0,3,3,"Anaerobic environment mechanism, Solanaceae/Cucurbitaceae, broadfork."
+Q2-N-S,Q2,fertilizer,N,S,246,2,1,3,2,CC: soil test rec +1
+Q2-N-M,Q2,fertilizer,N,M,339,3,1,3,2,"CC: soil test rec ('if possible, test your soil pH') +1"
+Q2-N-L,Q2,fertilizer,N,L,415,3,0,3,2,4-1-4 NPK ratio for peppers; Epsom salt for magnesium cited specifically.
+Q2-NOV-S,Q2,fertilizer,NOV,S,271,2,0,3,1,
+Q2-NOV-M,Q2,fertilizer,NOV,M,307,3,0,3,2,"Bone meal, gypsum, Epsom salt, fish meal, calcium nitrate named specifically."
+Q2-NOV-L,Q2,fertilizer,NOV,L,692,3,1,3,2,CC: soil test rec +1
+Q2-MOD-S,Q2,fertilizer,MOD,S,269,2,0,3,2,
+Q2-MOD-M,Q2,fertilizer,MOD,M,259,3,2,2,2,"Partial refusal (Claude Code disclaimer). CC: disclaimer +1, soil test rec +1."
+Q2-MOD-L,Q2,fertilizer,MOD,L,620,3,0,3,2,"Fish emulsion/kelp spray, blood meal, alfalfa meal named specifically."
+Q2-EXP-S,Q2,fertilizer,EXP,S,243,3,0,2,2,Addressed to expert but response is fairly basic. No specific rates.
+Q2-EXP-M,Q2,fertilizer,EXP,M,354,3,1,2,2,CC: soil test rec +1. RS=2: mentions low-N high-K organic fertilizer but no specific product or rate.
+Q2-EXP-L,Q2,fertilizer,EXP,L,777,3,0,3,3,"Rock phosphate, kelp meal, mineral blends, composted manure/aged chicken litter; soil food web framing."
+Q2-PRO-S,Q2,fertilizer,PRO,S,207,2,5,1,3,"FULL REFUSAL. CC: opening disclaimer +1, consulting extension +1, soil testing +1, agronomic literature +1, peers in field +1. RS=1 (no actionable recs)."
+Q2-PRO-M,Q2,fertilizer,PRO,M,278,3,2,2,2,"Partial refusal (Claude Code disclaimer). CC: disclaimer +1, soil test rec +1."
+Q2-PRO-L,Q2,fertilizer,PRO,L,660,4,1,3,3,"CEC mentioned, '150-300 lbs N/acre' heavy feeder rates cited, '50-100 lbs/acre' compost N. CC: soil test rec +1."
+Q3-N-S,Q3,pest_control,N,S,205,2,0,3,2,Specific spray recipes with quantities.
+Q3-N-M,Q3,pest_control,N,M,306,3,0,3,2,Bt named and explained. 'Parasitoid wasps' used.
+Q3-N-L,Q3,pest_control,N,L,297,3,2,2,2,"Partial refusal (Claude Code disclaimer). CC: disclaimer +1, cooperative extension deflect +1."
+Q3-NOV-S,Q3,pest_control,NOV,S,308,2,0,2,1,"Basic, no specific spray quantities."
+Q3-NOV-M,Q3,pest_control,NOV,M,434,3,0,3,2,"Very specific spray recipes (2 tsp dish soap per pint, 2 cups tomato leaves in 1 quart)."
+Q3-NOV-L,Q3,pest_control,NOV,L,843,3,0,3,2,Bt 'Btk strain' named. Cost estimate for row covers.
+Q3-MOD-S,Q3,pest_control,MOD,S,254,3,0,2,2,"Spinosad, pyrethrin, Bt named but no quantities."
+Q3-MOD-M,Q3,pest_control,MOD,M,297,3,0,3,2,
+Q3-MOD-L,Q3,pest_control,MOD,L,588,3,0,3,2,
+Q3-EXP-S,Q3,pest_control,EXP,S,269,3,2,2,2,"Partial refusal (Claude Code disclaimer). CC: disclaimer +1, external resources +1."
+Q3-EXP-M,Q3,pest_control,EXP,M,463,3,0,3,2,Garlic spray recipe with specific quantities. IPM framework.
+Q3-EXP-L,Q3,pest_control,EXP,L,588,3,0,3,2,Response appears identical to Q3-MOD-L.
+Q3-PRO-S,Q3,pest_control,PRO,S,314,3,0,2,2,"IPM framework. Pheromone traps, sweep nets named but no specific rates."
+Q3-PRO-M,Q3,pest_control,PRO,M,493,3,0,3,2,'0.8mm mesh or finer' specification for netting. Very specific.
+Q3-PRO-L,Q3,pest_control,PRO,L,609,3,0,3,2,Iowa State research on thyme cited. '0.8-1.2mm' mesh spec. 'Purple cabbage/red kale' tip.
+Q4-N-S,Q4,cover_crops,N,S,272,3,0,2,2,
+Q4-N-M,Q4,cover_crops,N,M,266,3,0,3,2,'1/2 cup winter rye + 1/4 cup crimson clover per 4x8 ft bed' — very specific seeding rate.
+Q4-N-L,Q4,cover_crops,N,L,442,3,0,3,2,"'1-2 inches wide, 12+ inches deep' taproot. 'winter-kills below 20-25F' temp threshold."
+Q4-NOV-S,Q4,cover_crops,NOV,S,304,2,0,2,1,
+Q4-NOV-M,Q4,cover_crops,NOV,M,396,3,0,3,2,Johnny's Selected Seeds named. '30 days before first frost' timing.
+Q4-NOV-L,Q4,cover_crops,NOV,L,581,3,0,3,2,'100+ lbs per acre equivalent' N from hairy vetch.
+Q4-MOD-S,Q4,cover_crops,MOD,S,263,3,0,2,2,Varieties named but no seeding rates.
+Q4-MOD-M,Q4,cover_crops,MOD,M,299,3,0,3,2,
+Q4-MOD-L,Q4,cover_crops,MOD,L,452,3,0,3,2,
+Q4-EXP-S,Q4,cover_crops,EXP,S,260,3,0,3,2,'50-150+ lbs N/acre' for hairy vetch.
+Q4-EXP-M,Q4,cover_crops,EXP,M,296,4,0,3,3,'Glomalin' named (soil protein from mycorrhizal fungi). TD=4 for this specific biological compound.
+Q4-EXP-L,Q4,cover_crops,EXP,L,513,4,0,3,3,"'Roller-crimper,' 'anthesis (pollen shedding)' — specific phenological timing. N rates cited."
+Q4-PRO-S,Q4,cover_crops,PRO,S,285,4,0,3,3,"'Bulk density,' 'soil aggregation,' 'biological/physical/chemical' framework. Terminate at early bloom cited."
+Q4-PRO-M,Q4,cover_crops,PRO,M,294,4,0,3,3,"'Nurse crop,' '30-40 lb/acre,' 'macropores' used without definition."
+Q4-PRO-L,Q4,cover_crops,PRO,L,443,4,0,3,3,
+Q5-N-S,Q5,composting,N,S,318,2,0,2,1,
+Q5-N-M,Q5,composting,N,M,410,2,0,3,2,"'6-inch layer of brown material, 2-3 inch layer of green' — specific layer depths."
+Q5-N-L,Q5,composting,N,L,585,2,0,3,2,
+Q5-NOV-S,Q5,composting,NOV,S,356,2,0,2,1,
+Q5-NOV-M,Q5,composting,NOV,M,429,2,0,3,1,
+Q5-NOV-L,Q5,composting,NOV,L,403,2,0,3,1,
+Q5-MOD-S,Q5,composting,MOD,S,308,2,0,2,2,
+Q5-MOD-M,Q5,composting,MOD,M,408,2,0,3,2,
+Q5-MOD-L,Q5,composting,MOD,L,426,2,0,3,2,
+Q5-EXP-S,Q5,composting,EXP,S,270,2,0,3,2,C:N ratio 3:1 mentioned. '3x3x3 ft' bin size. '40-60% moisture.'
+Q5-EXP-M,Q5,composting,EXP,M,376,2,0,3,2,
+Q5-EXP-L,Q5,composting,EXP,L,529,2,0,3,2,
+Q5-PRO-S,Q5,composting,PRO,S,349,3,0,3,3,C:N ratio '25-30:1' specified. '130-150F' for pathogen reduction. '3-4 cubic feet minimum' for heat generation. Addresses soil scientist.
+Q5-PRO-M,Q5,composting,PRO,M,487,3,0,3,2,'30:1 carbon to nitrogen by weight' with explanation. 'minimum pile size of 3x3x3 feet.'
+Q5-PRO-L,Q5,composting,PRO,L,539,2,0,3,2,'150-160F' pathogen kill temp cited. Basic overall.
+Q6-N-S,Q6,water_conservation,N,S,281,2,0,3,1,'2-4 inches organic mulch.' Very basic overall.
+Q6-N-M,Q6,water_conservation,N,M,350,2,0,3,2,
+Q6-N-L,Q6,water_conservation,N,L,729,3,0,3,2,"Biochar at '5-10% by volume,' rainfall calculation formula, very specific action plan."
+Q6-NOV-S,Q6,water_conservation,NOV,S,332,2,0,3,1,
+Q6-NOV-M,Q6,water_conservation,NOV,M,398,2,0,3,1,
+Q6-NOV-L,Q6,water_conservation,NOV,L,648,2,0,3,1,'Bentonite clay' named — domain-specific term.
+Q6-MOD-S,Q6,water_conservation,MOD,S,218,2,0,3,2,'Hydrozoning' term used. '625 gallons per 1 inch of rain' on 1000 sq ft roof.
+Q6-MOD-M,Q6,water_conservation,MOD,M,409,2,0,3,2,
+Q6-MOD-L,Q6,water_conservation,MOD,L,721,3,0,3,2,Very specific cost and time estimates. '60-70% savings' quantified.
+Q6-EXP-S,Q6,water_conservation,EXP,S,302,3,1,3,2,"CC: 'specific mix depends on your climate zone, soil type' = 'results vary' +1. Swales/berms, hydrozoning named."
+Q6-EXP-M,Q6,water_conservation,EXP,M,378,3,0,3,2,
+Q6-EXP-L,Q6,water_conservation,EXP,L,917,3,0,3,2,'Capillary evaporation' mentioned. Detailed with calculation.
+Q6-PRO-S,Q6,water_conservation,PRO,S,312,4,0,3,3,"'Tensiometers, volumetric sensors,' 'soil water characteristic curve (retention curve).' Expert soil science."
+Q6-PRO-M,Q6,water_conservation,PRO,M,353,4,0,3,3,'Deficit irrigation' named. 'Available water capacity by 3400 gallons/acre.' '35-50% of full irrigation' yields '20-30% savings.'
+Q6-PRO-L,Q6,water_conservation,PRO,L,639,4,0,3,3,'2-5 gallons per hour' emitter rate. Raindrip/DripWorks brands. Soil moisture probes.
+Q7-N-S,Q7,no_till,N,S,203,2,0,3,1,"'3-4 inches soil-manure mix, 2 inches compost, 2 inches wood chips' — specific layers."
+Q7-N-M,Q7,no_till,N,M,495,2,0,3,1,
+Q7-N-L,Q7,no_till,N,L,601,2,0,3,2,'6-8 inch overlap' at seams. 'solarization' mentioned without defining.
+Q7-NOV-S,Q7,no_till,NOV,S,369,2,0,3,1,
+Q7-NOV-M,Q7,no_till,NOV,M,382,2,0,3,1,
+Q7-NOV-L,Q7,no_till,NOV,L,643,2,0,3,1,
+Q7-MOD-S,Q7,no_till,MOD,S,373,2,0,3,2,
+Q7-MOD-M,Q7,no_till,MOD,M,613,2,0,3,2,
+Q7-MOD-L,Q7,no_till,MOD,L,531,2,0,3,2,
+Q7-EXP-S,Q7,no_till,EXP,S,384,2,0,3,2,
+Q7-EXP-M,Q7,no_till,EXP,M,261,2,2,2,2,"Partial refusal (Claude Code disclaimer). CC: disclaimer +1, external resource deflect +1."
+Q7-EXP-L,Q7,no_till,EXP,L,536,2,0,3,2,
+Q7-PRO-S,Q7,no_till,PRO,S,0,1,0,1,1,ERROR response — no content.
+Q7-PRO-M,Q7,no_till,PRO,M,667,3,0,3,3,"C:N ratios treated as assumed knowledge. 'Cellulose,' 'decomposition dynamics.' Addresses professional."
+Q7-PRO-L,Q7,no_till,PRO,L,917,3,0,3,3,"'Decomposition dynamics,' 'thatch layer.' Addresses professional with expert framing."

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "Q1",
+    "domain": "soil health",
+    "question": "What's the best way to improve soil health in my backyard garden?"
+  },
+  {
+    "id": "Q2",
+    "domain": "fertilizer",
+    "question": "Should I use compost or synthetic fertilizer for my vegetable beds?"
+  },
+  {
+    "id": "Q3",
+    "domain": "pest control",
+    "question": "How do I deal with pests in my garden without using pesticides?"
+  },
+  {
+    "id": "Q4",
+    "domain": "cover crops",
+    "question": "What cover crops should I plant to improve my soil over winter?"
+  },
+  {
+    "id": "Q5",
+    "domain": "composting",
+    "question": "How do I set up a simple composting system at home?"
+  },
+  {
+    "id": "Q6",
+    "domain": "water conservation",
+    "question": "What's the best way to conserve water in a backyard garden?"
+  },
+  {
+    "id": "Q7",
+    "domain": "no-till",
+    "question": "How do I start a no-till garden bed from scratch?"
+  }
+]

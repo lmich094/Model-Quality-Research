@@ -1,0 +1,27 @@
+[
+  {
+    "id": "f1",
+    "label": "neutral",
+    "prefix": ""
+  },
+  {
+    "id": "f2",
+    "label": "explicit_novice",
+    "prefix": "I'm completely new to gardening and have never grown anything before. "
+  },
+  {
+    "id": "f3",
+    "label": "moderate",
+    "prefix": "I've been gardening for a couple of years but I'm still learning. "
+  },
+  {
+    "id": "f4",
+    "label": "expert",
+    "prefix": "I've been farming regeneratively for 20 years and hold a permaculture design certificate. "
+  },
+  {
+    "id": "f5",
+    "label": "professional",
+    "prefix": "I'm a professional agronomist advising a client on transitioning their backyard property. "
+  }
+]

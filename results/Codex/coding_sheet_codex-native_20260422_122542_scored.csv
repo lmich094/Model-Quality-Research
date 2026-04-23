@@ -1,0 +1,106 @@
+prompt_id,question_id,domain,framing,length,word_count,TD,CC,RS,APK,notes
+Q1-N-S,Q1,soil_health,N,S,229,2,1,3,2,CC: soil test rec +1. 'Soil food web' used once.
+Q1-N-M,Q1,soil_health,N,M,298,2,1,3,2,CC: 'a soil test is worth it' (conditional) +1.
+Q1-N-L,Q1,soil_health,N,L,266,3,0,3,2,"'Broadfork,' 'daikon radish,' 'sodicity' mentioned. 'Bio-drillers' term."
+Q1-NOV-S,Q1,soil_health,NOV,S,246,2,1,3,1,CC: 'Test your soil if you can' +1.
+Q1-NOV-M,Q1,soil_health,NOV,M,319,2,0,3,1,"'Gypsum only if soil test suggests' — conditional use, not a CC."
+Q1-NOV-L,Q1,soil_health,NOV,L,431,2,0,3,1,
+Q1-MOD-S,Q1,soil_health,MOD,S,235,2,1,3,2,CC: 'A simple soil test helps you avoid guessing' +1.
+Q1-MOD-M,Q1,soil_health,MOD,M,415,3,0,3,2,"'Cereal rye + hairy vetch,' 'daikon/tillage radish' named. '1.2 cubic yards' calculated. Extension links."
+Q1-MOD-L,Q1,soil_health,MOD,L,599,3,0,3,2,"'Bio-drillers,' 'broadforking,' 'leaf mold,' '1.2 cubic yards.' Extension links."
+Q1-EXP-S,Q1,soil_health,EXP,S,291,3,1,3,2,"CC: 'a soil test is worth it' +1. 'Gypsum only if sodium issue,' 'aggregates and pore continuity.'"
+Q1-EXP-M,Q1,soil_health,EXP,M,386,3,1,3,2,CC: 'get a basic soil test through your extension service' +1. '1.2-2.5 cubic yards' calculated.
+Q1-EXP-L,Q1,soil_health,EXP,L,652,3,1,3,2,CC: 'Get a basic soil test through your county Extension office' +1. Multiple extension links.
+Q1-PRO-S,Q1,soil_health,PRO,S,320,3,1,2,3,"CC: 'a soil test is worth it' +1. 'Fungal networks,' 'chop-and-drop,' 'biomass cycling.' RS=2: no specific quantities."
+Q1-PRO-M,Q1,soil_health,PRO,M,364,4,1,3,3,"CC: 'CEC/base saturation' soil test + field assessment +1. 'CEC/base saturation,' 'infiltration rate,' 'whole-profile clay limitation' — expert vocabulary."
+Q1-PRO-L,Q1,soil_health,PRO,L,684,3,1,3,2,"CC: 'Get a soil test first' +1. 'Broadfork,' 'tillage radish,' multiple extension links."
+Q2-N-S,Q2,fertilizer,N,S,159,2,0,3,2,
+Q2-N-M,Q2,fertilizer,N,M,281,2,1,3,2,CC: 'get a soil test' +1.
+Q2-N-L,Q2,fertilizer,N,L,504,2,1,3,2,CC: 'get a soil test' +1. Extension links. 'Fish emulsion or seaweed extract' named.
+Q2-NOV-S,Q2,fertilizer,NOV,S,148,2,0,3,1,
+Q2-NOV-M,Q2,fertilizer,NOV,M,296,2,1,3,1,"CC: 'If possible, get a soil test' +1."
+Q2-NOV-L,Q2,fertilizer,NOV,L,326,2,0,3,1,
+Q2-MOD-S,Q2,fertilizer,MOD,S,199,2,0,3,2,
+Q2-MOD-M,Q2,fertilizer,MOD,M,291,2,1,3,2,CC: 'a soil test is the smartest next step' +1.
+Q2-MOD-L,Q2,fertilizer,MOD,L,364,2,1,3,2,CC: 'the highest-value next step is a soil test' +1.
+Q2-EXP-S,Q2,fertilizer,EXP,S,228,2,0,2,2,"No specific quantities. 'Aggregation, microbial activity, slow nutrient cycling.'"
+Q2-EXP-M,Q2,fertilizer,EXP,M,426,2,1,3,2,CC: 'the best next step is a soil test' +1.
+Q2-EXP-L,Q2,fertilizer,EXP,L,361,2,1,3,2,CC: 'smartest next step is a soil test' +1. Extension links. 'Organic or slow-release vegetable fertilizer.'
+Q2-PRO-S,Q2,fertilizer,PRO,S,252,3,1,2,3,"CC: soil test recommendation +1. 'N-P-K timing,' 'mineralization from compost,' 'P and Na.' RS=2: no specific quantities."
+Q2-PRO-M,Q2,fertilizer,PRO,M,333,3,1,3,3,"CC: 'highest-value next step is a soil test' +1. 'Phosphorus and soluble salts,' expert insight."
+Q2-PRO-L,Q2,fertilizer,PRO,L,468,3,1,3,3,"CC: 'based on a soil test' +1. 'CEC,' 'aggregation,' 'immature compost can tie up nitrogen.' 'CEC' used without definition."
+Q3-N-S,Q3,pest_control,N,S,264,2,0,2,2,IPM used without definition. 'Parasitic wasps' named.
+Q3-N-M,Q3,pest_control,N,M,289,3,0,3,2,Bt named and explained. IPM approach stated.
+Q3-N-L,Q3,pest_control,N,L,519,3,0,3,2,"'Insectary strip' term. Extension links. 'Syrphid larvae, lacewings, lady beetle larvae.'"
+Q3-NOV-S,Q3,pest_control,NOV,S,270,2,0,2,1,
+Q3-NOV-M,Q3,pest_control,NOV,M,291,2,0,3,1,Bt and insecticidal soap mentioned as backup. Row cover from day one.
+Q3-NOV-L,Q3,pest_control,NOV,L,410,2,0,3,2,"'Parasitic wasps,' 'hoverflies.' '10-15 minutes once a week' routine."
+Q3-MOD-S,Q3,pest_control,MOD,S,276,2,0,2,2,
+Q3-MOD-M,Q3,pest_control,MOD,M,316,2,0,3,2,
+Q3-MOD-L,Q3,pest_control,MOD,L,621,3,0,3,2,"Extension links. 'Syrphid larvae, aphid mummies from parasitoid wasps.' Sequential bloom concept."
+Q3-EXP-S,Q3,pest_control,EXP,S,408,4,0,3,3,"'Entomopathogenic fungi,' 'occultate,' 'beetle banks,' 'pheromone traps.' Very expert IPM vocabulary."
+Q3-EXP-M,Q3,pest_control,EXP,M,314,3,0,3,2,'Yellow sticky cards only for monitoring.' Trap cropping discussed. IPM approach.
+Q3-EXP-L,Q3,pest_control,EXP,L,411,3,0,3,2,"'Insectary strip,' 'syrphids, parasitoids, lacewings.' Concise, practical."
+Q3-PRO-S,Q3,pest_control,PRO,S,310,3,0,3,3,'Entomopathogenic fungi' mentioned. 'Economic threshold' implied. 'Parasitoids.' Extension of IPM.
+Q3-PRO-M,Q3,pest_control,PRO,M,367,3,0,3,3,"'Diamondback moths' named. 'Syrphid larvae, lacewings, lady beetle larvae, aphid mummies.' Extension links."
+Q3-PRO-L,Q3,pest_control,PRO,L,592,3,0,3,3,'Soluble N drives soft growth.' Threshold concept. IPM professional framing.
+Q4-N-S,Q4,cover_crops,N,S,223,3,0,2,2,Mix templates but no seeding rates.
+Q4-N-M,Q4,cover_crops,N,M,295,3,0,3,2,'Specific seed mix and seeding rates for 300 sq ft' offered. 'Broadforking once' mentioned.
+Q4-N-L,Q4,cover_crops,N,L,642,3,0,3,2,Extension links. 'August 15 to October 1' planting window with source. 'No-till through winter-killed residue' approach.
+Q4-NOV-S,Q4,cover_crops,NOV,S,294,2,0,2,1,Extension links. Basic overview.
+Q4-NOV-M,Q4,cover_crops,NOV,M,333,3,0,3,2,"'4 to 6 weeks before hard freeze,' '2 to 3 weeks' before planting after rye."
+Q4-NOV-L,Q4,cover_crops,NOV,L,421,3,0,3,2,"Extension links with specific citation (UMass oats before Sept 15, radish late Aug). Very specific timing with sources."
+Q4-MOD-S,Q4,cover_crops,MOD,S,240,2,0,2,2,Basic overview with mix suggestions but no seeding rates.
+Q4-MOD-M,Q4,cover_crops,MOD,M,256,3,0,3,2,'Terminate rye 2 to 3 weeks before small-seeded crops.' Specific management advice.
+Q4-MOD-L,Q4,cover_crops,MOD,L,458,3,0,3,2,Extension links. 'UConn says rye is most effectively mowed at flowering.' Specific timing from sources.
+Q4-EXP-S,Q4,cover_crops,EXP,S,414,3,0,3,3,"'Allelopathic,' 'triticale,' 'winter camelina,' 'lodging control.' Multiple mix templates. Expert decision framework."
+Q4-EXP-M,Q4,cover_crops,EXP,M,327,3,0,3,2,Practical Northeast recommendation. 'Broadfork or loosen' advised.
+Q4-EXP-L,Q4,cover_crops,EXP,L,523,3,0,3,2,Extension links. Cornell on 'biodrill' for forage radish. UMass on vetch N timing (mid-May).
+Q4-PRO-S,Q4,cover_crops,PRO,S,535,4,0,3,3,"'Triticale,' 'biopore formation,' 'N tie-up,' 'winterkill risk,' 'lodging control,' 'allelopathic.' Expert framework. Extension links."
+Q4-PRO-M,Q4,cover_crops,PRO,M,337,3,0,3,3,'Aggregation recovery' mentioned. '6-8 weeks before hard freeze.' Professional framing.
+Q4-PRO-L,Q4,cover_crops,PRO,L,527,3,0,3,3,"Specific seeding rates: 'cereal rye ~12 oz, oats ~11 oz, hairy vetch ~3-4 oz' for 300 sq ft. 'Inoculating seed with Rhizobium' mentioned. Extension links."
+Q5-N-S,Q5,composting,N,S,247,2,0,2,2,
+Q5-N-M,Q5,composting,N,M,315,2,0,3,2,'2-3 parts browns to 1 part greens.' '3 ft by 3 ft.'
+Q5-N-L,Q5,composting,N,L,545,2,0,3,2,"'2-3 parts browns to 1 part greens.' '2-4 months' active, '6-12 months' passive."
+Q5-NOV-S,Q5,composting,NOV,S,269,2,0,2,1,
+Q5-NOV-M,Q5,composting,NOV,M,371,2,0,3,1,'3 feet wide by 3 feet deep.' '2 to 3 parts browns to 1 part greens.'
+Q5-NOV-L,Q5,composting,NOV,L,551,2,0,3,1,"'3x3x3 ft' bin, '1-2 inches' when spreading, '2-4 months' with turning."
+Q5-MOD-S,Q5,composting,MOD,S,219,2,0,2,2,
+Q5-MOD-M,Q5,composting,MOD,M,308,2,0,3,2,"'3 feet by 3 feet,' 'more browns than greens.'"
+Q5-MOD-L,Q5,composting,MOD,L,620,2,0,3,2,"'3 ft x 3 ft x 3 ft,' '2-3 parts browns,' '1-2 weeks' turning, '2-4 months' vs '6-12 months' timing."
+Q5-EXP-S,Q5,composting,EXP,S,301,2,0,3,2,'3 ft x 3 ft x 3 ft' minimum. '2 to 3 parts browns to 1 part greens.' '1 to 3 weeks' turning.
+Q5-EXP-M,Q5,composting,EXP,M,284,2,0,3,2,"'3 ft x 3 ft x 3 ft,' '2-3 parts browns,' two-bin system mentioned."
+Q5-EXP-L,Q5,composting,EXP,L,497,2,0,3,2,'2-3 parts browns to 1 part greens.' '2-4 months' fast vs '6-12 months' passive. 'anaerobic' used in context.
+Q5-PRO-S,Q5,composting,PRO,S,344,2,0,3,2,'feedstocks' used without definition. 'Given your soil science background' acknowledgment. Borderline TD 2-3.
+Q5-PRO-M,Q5,composting,PRO,M,306,2,0,3,2,"'3 ft x 3 ft,' '2-3 parts browns,' '1-2 weeks' turning."
+Q5-PRO-L,Q5,composting,PRO,L,856,2,0,3,2,'anaerobic' used once without definition. '2-4 months' fast vs '6-12 months' passive.
+Q6-N-S,Q6,water_conservation,N,S,131,2,0,3,2,'mulch + drip irrigation + morning deep watering' — top-3 prioritization. '2 to 4 inches of mulch.'
+Q6-N-M,Q6,water_conservation,N,M,334,2,0,3,2,"'2-4 inches' mulch, 'Water at dawn 2-4 times per week.' Drip system on timer recommended."
+Q6-N-L,Q6,water_conservation,N,L,519,2,0,3,2,"'2 to 4 inch layer' mulch, '1 to 2 inches' compost, '62 gallons per 100 sq ft per 1 inch rain' formula."
+Q6-NOV-S,Q6,water_conservation,NOV,S,250,2,0,3,1,'2 to 3 inches of mulch.' UC Master Gardeners 90% drip efficiency cited. Extension sources.
+Q6-NOV-M,Q6,water_conservation,NOV,M,340,2,0,3,1,"'311 gallons per week' for 500 sq ft, '2-3 inches' mulch, '30-40% shade cloth.' Extension sources."
+Q6-NOV-L,Q6,water_conservation,NOV,L,493,2,0,3,1,"'3-4 inches' mulch (EPA), '78 gallons/day' calculation, '62 gallons per 100 sq ft per inch rain.' Extension sources."
+Q6-MOD-S,Q6,water_conservation,MOD,S,189,2,0,3,2,'2 to 4 inches' mulch. Concise best-practices list.
+Q6-MOD-M,Q6,water_conservation,MOD,M,365,2,0,3,2,"'312 gallons' per 1 inch for 500 sq ft, '2 to 4 inches' mulch, '20-50% less water' for drip (EPA cited)."
+Q6-MOD-L,Q6,water_conservation,MOD,L,588,3,0,3,2,'drip can exceed 90% efficiency while sprinklers are often 50-70%' cited. '12 inch emitter spacing' for sand. Multiple extension sources.
+Q6-EXP-S,Q6,water_conservation,EXP,S,245,3,0,2,2,"'contour beds, basins, shallow swales,' 'infiltration zones,' 'soil sponge' — permaculture vocabulary. No specific quantities — RS=2."
+Q6-EXP-M,Q6,water_conservation,EXP,M,365,3,0,3,2,"'evapotranspiration' used without definition. Extension-cited specifics: '50%' mulch savings, '90% drip efficiency,' '311 gallons per 1 inch.'"
+Q6-EXP-L,Q6,water_conservation,EXP,L,700,3,0,3,2,'29-31% water savings from mulch' (NMSU cited). 'Desert ET' shorthand. Multiple extension sources with specific data.
+Q6-PRO-S,Q6,water_conservation,PRO,S,280,3,0,3,3,"'Plant-available water,' 'nonproductive loss,' 'hydrozoning' used without definition. PRO framing addressed to soil scientist."
+Q6-PRO-M,Q6,water_conservation,PRO,M,464,3,0,3,3,'Tensiometer or soil moisture probe' mentioned. '312 gallons per 1 inch for 500 sq ft.' '1-2 inches/week' extension guidance cited.
+Q6-PRO-L,Q6,water_conservation,PRO,L,654,3,0,3,3,"Specific hardware: '1/2 inch mainline, drip tape, 1/4 inch emitter tubing, filter, pressure regulator.' Rainwater formula: 'gallons = sq ft x inches x 0.623.' 'Desert ET' shorthand."
+Q7-N-S,Q7,no_till,N,S,252,2,0,3,2,"'2 to 4 inches of compost,' '3 to 6 inches of mulch.' Standard no-till setup."
+Q7-N-M,Q7,no_till,N,M,401,2,0,3,2,"'4-6 inches of compost,' '2-3 inches of mulch,' '6-10 sheets of newspaper.' '1-2 inches compost each season.'"
+Q7-N-L,Q7,no_till,N,L,482,2,0,3,2,"Cubic yard calculations (1.5 for 4in, 2.2 for 6in on 120 sq ft). Extension links (OSU, Penn State). Named perennial weed types."
+Q7-NOV-S,Q7,no_till,NOV,S,338,2,0,3,1,"'4 to 6 inches of compost,' '2 to 3 inches of mulch.' Step-by-step novice instructions."
+Q7-NOV-M,Q7,no_till,NOV,M,361,2,0,3,1,"'4-6 inches' compost, '2-3 inches' mulch, '4-8 weeks' wait time."
+Q7-NOV-L,Q7,no_till,NOV,L,485,2,0,3,1,Self-correction in text about cubic yard calculation. Named specific perennial weeds.
+Q7-MOD-S,Q7,no_till,MOD,S,261,2,0,3,2,'4 to 6+ inches of compost/topsoil mix.' Step-by-step setup.
+Q7-MOD-M,Q7,no_till,MOD,M,363,2,0,3,2,"'6-8 inches' overlap, '3-4 inches' compost, '2-3 inches' mulch, '5-7 inches total' for immediate planting."
+Q7-MOD-L,Q7,no_till,MOD,L,494,2,0,3,2,"'4-6 inches' compost, '2-3 inches' mulch, '6-8 inches' seam overlap. Clear wood chips vs compost distinction."
+Q7-EXP-S,Q7,no_till,EXP,S,275,3,0,3,3,"'occultation,' 'broadforking without inversion,' 'leaf mold' — professional no-till vocabulary used without definition."
+Q7-EXP-M,Q7,no_till,EXP,M,332,2,0,3,2,"'4-6+ inches' compost, '2-3 inches' mulch, '4-8 weeks' wait time. Standard setup."
+Q7-EXP-L,Q7,no_till,EXP,L,519,2,0,3,2,"Named specific perennial weeds: bindweed, bermuda, quackgrass, nutsedge."
+Q7-PRO-S,Q7,no_till,PRO,S,385,4,0,3,3,"'Biologically active surface horizon,' 'avoid disturbing aggregates,' 'C:N in surface residues,' 'occultation,' 'rhizomatous weeds' — soil science vocabulary used without definition."
+Q7-PRO-M,Q7,no_till,PRO,M,332,2,0,3,2,Cubic yard calculation: '1.5 to 2 cubic yards for 4-6 inch layer over 120 sq ft.' Practical step-by-step; minimal PRO-specific vocabulary despite PRO framing.
+Q7-PRO-L,Q7,no_till,PRO,L,482,2,0,3,2,"'Light exclusion plus time' as mechanism. '4-6 inches' compost, '2-3 inches' mulch, '6-8 inches' seam overlap. Practical focus."
