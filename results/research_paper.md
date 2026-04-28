@@ -8,7 +8,7 @@
 
 ## Abstract
 
-This study examines whether telling an AI model your level of expertise — from "I'm a complete novice" to "I'm a professional agronomist" — meaningfully changes the advice it gives. Using a fully factorial 5×3×7 design (105 prompts per model), we ran identical core questions about regenerative agriculture through two AI systems — Claude Sonnet 4.6 and OpenAI Codex — at five expertise framing levels and three prompt lengths. Two AI raters (Claude Code and Codex) independently scored all 210 responses on four dimensions: Technical Depth (TD), Caveat Count (CC), Recommendation Specificity (RS), and Assumed Prior Knowledge (APK). Expert framing did increase TD and APK monotonically (novice TD = 2.26 vs. professional TD = 3.15; novice APK = 1.29 vs. professional APK = 2.71), but did not reduce caveats as predicted — and the only full refusal in the dataset occurred at *professional* framing, not novice. Prompt length improved recommendation specificity (short RS = 2.61 → long RS = 2.97) but plateaued quickly after a medium-length prompt. Claude produced more technically deep, more verbose responses; Codex was marginally more specific. Inter-rater reliability was strong for CC (κ = 0.622) and RS (κ = 0.548) but near-random for TD (κ = 0.109) — the dimension most central to the study's question. Bottom line: stating your expertise level to an AI does change what you get, particularly vocabulary level and assumed background, but not in the simple "more expert = better advice" pattern most users might expect.
+This study examines whether telling an AI model your level of expertise — from "I'm a complete novice" to "I'm a professional agronomist" — meaningfully changes the advice it gives. Using a fully factorial 5×3×7 design (105 prompts per model), we ran identical core questions about regenerative agriculture through two AI systems — Claude Sonnet 4.6 and OpenAI Codex — at five expertise framing levels and three prompt lengths. Two AI raters (Claude Code and Codex) independently scored all 210 responses on four dimensions: Technical Depth (TD), Caveat Count (CC), Recommendation Specificity (RS), and Assumed Prior Knowledge (APK). Expert framing did increase TD and APK monotonically (novice TD = 2.26 vs. professional TD = 3.15; novice APK = 1.29 vs. professional APK = 2.71), but did not reduce caveats as predicted — and the only full refusal in the dataset occurred at *professional* framing, not novice. Prompt length improved recommendation specificity (short RS = 2.61 → long RS = 2.97) but plateaued quickly after a medium-length prompt. Claude produced more technically deep, more verbose responses; Codex was marginally more specific. Inter-rater reliability was strong for CC (κ = 0.622) and RS (κ = 0.548) but near-random for TD (κ = 0.109) — the dimension most central to the study's question. (κ is Cohen's Kappa; see Section 3.6 for a full explanation.) Bottom line: stating your expertise level to an AI does change what you get, particularly vocabulary level and assumed background, but not in the simple "more expert = better advice" pattern most users might expect.
 
 ---
 
@@ -97,7 +97,7 @@ Two AI systems scored all responses independently:
 - **Rater 1:** Claude Code (claude-sonnet-4-6)
 - **Rater 2:** Codex
 
-Each rater received the response text and the rubric and produced scores with brief justification notes. Raters were not shown each other's scores. The primary analysis uses Rater 1 (Claude Code) scores throughout for consistency; Rater 2 scores are used in the inter-rater reliability section. N = 208 paired rows (two response sets × 104 rows each, after excluding the Q7-PRO-S error row from both sets).
+Each rater received the response text and the rubric and produced scores with brief justification notes. Raters were not shown each other's scores. The primary analysis uses Rater 1 (Claude Code) scores throughout for consistency; Rater 2 scores are used in the inter-rater reliability section. N = 208 paired rows — meaning 208 individual AI responses, each scored independently by both raters. Rater scores appear as two columns on the same row, not as separate rows, so the IRA dataset is 208 rows, not 418. For reference: the raw response count is 104 Claude + 105 Codex = 209 responses; Q7-PRO-S is excluded from both rater sets, leaving 208.
 
 ### 2.5 Exclusions
 
@@ -110,6 +110,8 @@ Each rater received the response text and the rubric and produced scores with br
 ## 3. Results
 
 ### 3.1 Effect of Expertise Framing
+
+Throughout Sections 3.1, 3.2, and 3.4, **pooled models** means Claude and Codex responses are combined into a single dataset — 104 Claude rows and 105 Codex rows treated as one group — to isolate the effect of the variable being examined (framing or length) from model-level differences. Model-specific differences are reported separately in Section 3.3.
 
 **Table 1. Mean scores by expertise framing (n ≈ 41–42 per framing, pooled models, Rater 1 scores)**
 
@@ -188,6 +190,8 @@ Water conservation and soil health show the largest framing-driven TD variation 
 **The Codex soil-test reflex.** Codex appended a boilerplate soil-test recommendation to nearly every response across all framing levels, producing CC ≈ 1 in most Codex rows regardless of the question or the stated expertise of the asker. This is house style — a systematic low-intensity suggestion — rather than framing-responsive hedging. It means Codex's low overall CC (0.19) reflects consistent background-level caution, not an absence of cautionary language.
 
 ### 3.6 Inter-Rater Reliability
+
+**Cohen's Kappa (κ)** is a standard measure of agreement between two raters that corrects for chance. If two raters would agree 60% of the time just by guessing randomly, a raw 70% agreement rate isn't impressive — κ accounts for that baseline and reports only the agreement above chance. κ = 1.0 means perfect agreement; κ = 0.0 means agreement is no better than chance; negative κ means raters disagree more than chance would predict. Conventional benchmarks: < 0.20 slight, 0.21–0.40 fair, 0.41–0.60 moderate, 0.61–0.80 substantial, > 0.80 near-perfect. Linear-weighted κ (used here) gives partial credit for near-misses, so a 1-point disagreement is penalized less than a 3-point disagreement.
 
 **Table 5. Inter-rater reliability (Rater 1 = Claude Code, Rater 2 = Codex; n = 208 paired rows)**
 
