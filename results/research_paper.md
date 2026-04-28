@@ -183,7 +183,7 @@ Water conservation and soil health show the largest framing-driven TD variation 
 
 ### 3.5 Notable Anomalies
 
-**The Claude disclaimer pattern.** Nine Claude responses — spanning neutral, moderate, and expert framings at short and medium lengths — contained a boilerplate Claude Code interface disclaimer that mechanically added +1 to their CC score. This is a runner-environment artifact, not a genuine content signal. After adjusting for it, the Claude–Codex CC gap shrinks from 0.15 to approximately 0.06 overall, and the MOD framing gap closes to zero entirely. Without identifying this artifact, Claude would appear systematically more cautious than it actually is.
+**The Claude disclaimer pattern.** Nine Claude responses — spanning neutral, moderate, and expert framings at short and medium lengths — contained a boilerplate Claude Code interface disclaimer that mechanically added +1 to their CC score. This is a runner-environment artifact, not a genuine content signal. After adjusting for it, the Claude–Codex CC gap shrinks from 0.15 to approximately 0.06 overall, and the gap between Claude and Codex at the moderate framing level (MOD) closes to zero entirely. Without identifying this artifact, Claude would appear systematically more cautious than it actually is.
 
 **Q2-PRO-S: A full refusal at professional framing.** For the fertilizer question at professional framing and short prompt length, Claude refused to provide application rates, generating CC = 5 and RS = 1 — the only true content refusal in the dataset. The refusal text cited uncertainty about local conditions and recommended consulting agronomic literature and professional peers. This is the opposite of H2's prediction: the model declined to give specific advice to a stated *professional*, not a novice. It appears to represent a liability-avoidance trigger specific to actionable chemical guidance, not a general response to expertise framing.
 
@@ -236,7 +236,9 @@ PRO-L responses have the highest average TD. But RS reaches its ceiling (3.00) a
 
 **H0 — Framing produces no meaningful difference: Partially valid.**
 
-For RS across all conditions and for CC under most conditions, framing produces negligible differences. For composting specifically, framing is essentially irrelevant. The meaningful framing effects are real, but they're concentrated in specific dimensions (TD, APK) and vary substantially by domain.
+Here, "framing" refers specifically to the expertise prefix manipulation — the sentence added to the front of each prompt that declares who you are (novice, moderate, expert, etc.). H0 is the skeptical baseline: that those prefix sentences are essentially ignored, and the AI produces the same response regardless of whether you claim to be a complete beginner or a professional agronomist.
+
+The data partially bears this out. For RS, framing made almost no difference across the board — scores stayed within a 0.04-point range (2.81 to 2.85) no matter who was asking. For CC, novice framing produced the exact same low-caveat responses as expert framing in most conditions. For the composting domain specifically, TD barely shifted at all across framing levels (range = 0.33 on a 5-point scale), meaning the AI gave essentially the same depth of response to a novice and a professional. So H0 holds in patches — the null result is real and worth acknowledging, even if TD and APK show that framing isn't completely ignored either.
 
 ### 4.2 What the Framing Effects Actually Mean
 
